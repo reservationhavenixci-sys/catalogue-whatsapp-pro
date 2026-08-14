@@ -15,8 +15,7 @@
     setFooterYear();
     bindOfferToggles();
     bindOfferConfirm();
-    bindCatalogueLinks();
-    bindAddProductButtons();
+    bindOrderSendLinks();
     bindFollowupToggles();
     bindPaymentInputs();
     bindAutosave();
@@ -29,12 +28,23 @@
     if (yearEl) yearEl.textContent = new Date().getFullYear();
   }
 
-  /* ---------- 1. "Voir les détails de l'offre" ---------- */
+  /* ---------- 1. "Voir les détails de l'offre" (accordéon entre les offres) ---------- */
   function bindOfferToggles() {
-    document.querySelectorAll(".offer-details-toggle").forEach(function (btn) {
+    var toggles = document.querySelectorAll(".offer-details-toggle");
+
+    toggles.forEach(function (btn) {
       btn.addEventListener("click", function () {
         var panel = document.getElementById(btn.getAttribute("aria-controls"));
         var expanded = btn.getAttribute("aria-expanded") === "true";
+
+        // Referme automatiquement les détails des AUTRES offres (une seule ouverte à la fois)
+        toggles.forEach(function (otherBtn) {
+          if (otherBtn === btn) return;
+          var otherPanel = document.getElementById(otherBtn.getAttribute("aria-controls"));
+          otherBtn.setAttribute("aria-expanded", "false");
+          if (otherPanel) otherPanel.hidden = true;
+        });
+
         btn.setAttribute("aria-expanded", String(!expanded));
         if (panel) panel.hidden = expanded;
         btn.classList.remove("blink-btn"); // arrête de clignoter une fois consulté
@@ -42,25 +52,39 @@
     });
   }
 
-  /* ---------- 2. "Je prends cette offre" ---------- */
+  /* ---------- 2. "Je prends cette offre" : bascule entre les détails et le formulaire ---------- */
   function bindOfferConfirm() {
     document.querySelectorAll(".confirm-offer-btn").forEach(function (btn) {
       btn.addEventListener("click", function () {
         var offer = btn.getAttribute("data-offer-confirm");
         var wrapper = document.getElementById("order-wrapper-" + offer);
-        if (wrapper) {
-          wrapper.hidden = false;
-          wrapper.scrollIntoView({ behavior: "smooth", block: "start" });
+        var details = document.querySelector('[data-offer-details="' + offer + '"]');
+        var isFormOpen = btn.getAttribute("aria-expanded") === "true";
+
+        if (!isFormOpen) {
+          // Ouvre le formulaire à remplir et referme les détails pour rester compact
+          if (details) details.hidden = true;
+          if (wrapper) {
+            wrapper.hidden = false;
+            wrapper.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+          btn.textContent = "← Revenir aux détails de l'offre";
+          btn.setAttribute("aria-expanded", "true");
+          selectOffer(offer);
+        } else {
+          // Referme le formulaire et rouvre les détails (le client garde la main)
+          if (wrapper) wrapper.hidden = true;
+          if (details) details.hidden = false;
+          btn.textContent = "Je prends cette offre — remplir mes informations";
+          btn.setAttribute("aria-expanded", "false");
         }
-        btn.hidden = true;
-        selectOffer(offer);
       });
     });
   }
 
-  /* ---------- 3. Lien "Envoyer sur WhatsApp" ---------- */
-  function bindCatalogueLinks() {
-    document.querySelectorAll(".catalogue-link").forEach(function (link) {
+  /* ---------- 3. Lien "Envoyer sur WhatsApp" (inclut le montant et l'acompte choisis) ---------- */
+  function bindOrderSendLinks() {
+    document.querySelectorAll(".order-send-link").forEach(function (link) {
       var form = link.closest("form");
 
       link.addEventListener("click", function (e) {
@@ -74,11 +98,29 @@
         if (form) {
           var offer = form.getAttribute("data-offer-form");
           var label = OFFER_LABELS[offer] || offer;
+          var total = OFFER_PRICES[offer];
           var nom = getFieldValue(form, "nom");
           var boutique = getFieldValue(form, "boutique");
           var ville = getFieldValue(form, "ville");
           var whatsapp = getFieldValue(form, "whatsapp");
           var infos = getFieldValue(form, "infos");
+
+          // Mode de paiement actuellement choisi (acompte 50% ou paiement intégral 100%)
+          var checkedRadio = document.querySelector('input[name="acompte"]:checked');
+          var pct = checkedRadio ? parseInt(checkedRadio.value, 10) : 50;
+          var paiementLigne = "";
+
+          if (total) {
+            if (pct === 100) {
+              paiementLigne = "Paiement : intégral — " + formatFCFA(total);
+            } else {
+              var acompte = Math.round((total * pct) / 100);
+              var solde = total - acompte;
+              paiementLigne =
+                "Paiement : acompte " + pct + "% — " + formatFCFA(acompte) +
+                " (solde " + formatFCFA(solde) + " à la livraison)";
+            }
+          }
 
           var text =
             "Bonjour, je souhaite l'offre " + label + ".\n\n" +
@@ -87,7 +129,8 @@
             "Nom de la boutique : " + boutique + "\n" +
             "Ville : " + ville + "\n" +
             "Contact WhatsApp : " + whatsapp + "\n" +
-            "Autres informations : " + (infos || "—");
+            "Autres informations : " + (infos || "—") +
+            (paiementLigne ? "\n\n" + paiementLigne : "");
 
           window.open(
             "https://wa.me/2250151030957?text=" + encodeURIComponent(text),
@@ -101,15 +144,6 @@
             indicator.classList.add("is-visible");
           }
         }
-
-        // Révèle ensuite le bloc catalogue correspondant pour que le client puisse continuer
-        var block = document.getElementById(link.getAttribute("data-catalogue-target"));
-        if (block) {
-          block.hidden = false;
-          setTimeout(function () {
-            block.scrollIntoView({ behavior: "smooth", block: "start" });
-          }, 300);
-        }
       });
     });
   }
@@ -119,32 +153,7 @@
     return field ? field.value.trim() : "";
   }
 
-  /* ---------- 4. Ajouter / supprimer un produit du catalogue ---------- */
-  function bindAddProductButtons() {
-    var template = document.getElementById("product-row-template");
-    if (!template) return;
-
-    document.querySelectorAll(".add-product-btn").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var target = btn.getAttribute("data-catalogue-target");
-        var container = document.querySelector('.catalogue-products[data-catalogue="' + target + '"]');
-        if (!container) return;
-
-        var row = template.content.firstElementChild.cloneNode(true);
-        container.appendChild(row);
-
-        var removeBtn = row.querySelector(".product-remove");
-        removeBtn.addEventListener("click", function () {
-          row.remove();
-        });
-
-        var firstInput = row.querySelector(".p-name");
-        if (firstInput) firstInput.focus();
-      });
-    });
-  }
-
-  /* ---------- 5. Options de suivi (accordéon) ---------- */
+  /* ---------- 4. Options de suivi (accordéon) ---------- */
   function bindFollowupToggles() {
     document.querySelectorAll(".followup-toggle").forEach(function (btn) {
       btn.addEventListener("click", function () {
@@ -156,7 +165,7 @@
     });
   }
 
-  /* ---------- 6. Bloc paiement : calcul automatique ---------- */
+  /* ---------- 5. Bloc paiement : calcul automatique ---------- */
   function selectOffer(offer) {
     selectedOffer = offer;
     var nameEl = document.querySelector('[data-payment="offer-name"]');
@@ -173,47 +182,22 @@
     }
   }
 
-  /* ---------- 6bis. Bouton "Remplir mon catalogue" ---------- */
-  // Ce bouton doit emmener le client vers SON catalogue (starter ou business),
-  // celui qui correspond à l'offre qu'il vient de choisir — jamais vers un lien générique.
+  /* ---------- 5bis. Bouton "Remplir mon catalogue" ---------- */
+  // Débloqué uniquement une fois qu'une offre a été choisie.
   function updateCatalogueAccessButton() {
+    // Le bouton "Remplir mon catalogue" n'est plus verrouillé :
+    // il reste cliquable en permanence, qu'une offre ait été choisie ou non.
     var btn = document.getElementById("remplir-catalogue-btn");
     var hint = document.querySelector("[data-catalogue-hint]");
     if (!btn) return;
-
-    if (selectedOffer) {
-      btn.setAttribute("aria-disabled", "false");
-      btn.setAttribute("href", "#catalogue-" + selectedOffer);
-      if (hint) hint.hidden = true;
-    } else {
-      btn.setAttribute("aria-disabled", "true");
-      btn.setAttribute("href", "#offres");
-      if (hint) hint.hidden = false;
-    }
+    btn.removeAttribute("aria-disabled");
+    if (hint) hint.hidden = true;
   }
 
   function bindCatalogueAccess() {
     var btn = document.getElementById("remplir-catalogue-btn");
     if (!btn) return;
-
     updateCatalogueAccessButton();
-
-    btn.addEventListener("click", function (e) {
-      if (!selectedOffer) {
-        // Aucune offre choisie : on renvoie vers les offres au lieu d'un lien mort
-        e.preventDefault();
-        var offersSection = document.getElementById("offres");
-        if (offersSection) offersSection.scrollIntoView({ behavior: "smooth", block: "start" });
-        return;
-      }
-
-      e.preventDefault();
-      var block = document.getElementById("catalogue-" + selectedOffer);
-      if (block) {
-        block.hidden = false;
-        block.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    });
   }
 
   function bindPaymentInputs() {
@@ -257,7 +241,7 @@
     return amount.toLocaleString("fr-FR") + " FCFA";
   }
 
-  /* ---------- 7. Sauvegarde automatique des formulaires ---------- */
+  /* ---------- 6. Sauvegarde automatique des formulaires ---------- */
   function bindAutosave() {
     document.querySelectorAll(".order-form").forEach(function (form) {
       var offer = form.getAttribute("data-offer-form");
@@ -297,7 +281,7 @@
     });
   }
 
-  /* ---------- 8. Apparition douce des blocs au défilement ---------- */
+  /* ---------- 7. Apparition douce des blocs au défilement ---------- */
   function bindScrollReveal() {
     var items = document.querySelectorAll(".reveal");
     if (!items.length) return;
