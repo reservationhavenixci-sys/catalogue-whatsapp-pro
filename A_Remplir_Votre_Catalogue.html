@@ -291,7 +291,7 @@
         <!-- STEP 4 -->
         <div class="wizard-step" data-step="4">
           <div class="step-title"><div class="badge">4</div><h2>Vos produits</h2></div>
-          <p class="step-sub">Une fiche par produit.</p>
+          <p class="step-sub">Remplissez un produit, puis cliquez sur « Envoyer ce produit sur WhatsApp » : cela ouvre WhatsApp uniquement pour ce produit, sans toucher au reste de la fiche. Ajoutez aussitôt ses photos dans la conversation, puis revenez ici remplir le produit suivant. Un produit déjà envoyé ne sera pas renvoyé avec le message final de l'étape 8. Si vous oubliez d'en envoyer un, pas de souci : il sera automatiquement inclus dans ce message final.</p>
 
           <div id="productsContainer"></div>
           <button type="button" class="add-btn" id="addProductBtn">+ Ajouter un autre produit</button>
@@ -609,7 +609,84 @@ const productsContainer = makeRepeater('productsContainer', 'addProductBtn', () 
     <label>Description</label>
     <textarea class="p-desc" placeholder="Ex : Hydratant, pour tous types de peau"></textarea>
     <div class="checkbox-row"><input type="checkbox" class="p-featured"><label>Produit vedette (affiché sur la page d'accueil)</label></div>
+
+    <div class="photo-note">
+      <p><strong>📷 Photos de ce produit :</strong> après l'ouverture de WhatsApp, ajoutez les photos correspondant à ce produit directement dans la conversation.</p>
+    </div>
+
+    <button type="button" class="send-btn p-send-btn"><i>📲</i> Envoyer ce produit sur WhatsApp</button>
+    <div class="warn p-warn"></div>
+    <div class="p-sent-badge" style="display:none; align-items:center; justify-content:center; gap:8px; font-size:12.5px; color:var(--wa-green-dark); font-weight:600; text-align:center; margin-top:8px;">
+      <span>✓ Produit envoyé sur WhatsApp</span>
+      <button type="button" class="p-edit-btn" style="background:none; border:none; color:var(--blue-dark); font-size:12px; font-weight:500; cursor:pointer; text-decoration:underline;">Modifier</button>
+    </div>
 `, 'Produit');
+
+function lockProductCard(card){
+  card.querySelectorAll('input, textarea').forEach(el => { el.disabled = true; });
+  const btn = card.querySelector('.p-send-btn');
+  btn.style.display = 'none';
+  card.querySelector('.p-warn').textContent = '';
+  card.querySelector('.p-sent-badge').style.display = 'flex';
+  card.dataset.sent = '1';
+}
+function unlockProductCard(card){
+  card.querySelectorAll('input, textarea').forEach(el => { el.disabled = false; });
+  card.querySelector('.p-send-btn').style.display = 'flex';
+  card.querySelector('.p-sent-badge').style.display = 'none';
+  card.dataset.sent = '';
+}
+
+function buildSingleProductMessage(p, isBusiness){
+  const boutique = document.getElementById('f_boutique').value.trim();
+  const nomResp = document.getElementById('f_nom').value.trim();
+  const tel = document.getElementById('f_tel').value.trim();
+  let l = [];
+  l.push('NOUVEAU PRODUIT' + (boutique ? ' — ' + boutique : (nomResp ? ' — ' + nomResp : '')));
+  l.push('');
+  l.push(`Nom : ${p.name || '-'}`);
+  l.push(`Catégorie : ${p.category || '-'}`);
+  l.push(`Prix : ${p.price ? fmtFCFA(Number(p.price)) : '-'}`);
+  l.push(`Description : ${p.desc || '-'}`);
+  if(p.featured) l.push('Produit vedette : Oui');
+  if(p.stock && isBusiness) l.push(`Stock : ${p.stock}`);
+  if(tel) l.push(`Contact commande : ${tel}`);
+  l.push('');
+  l.push('(Photos de ce produit envoyées juste après ce message)');
+  return l.join('\n');
+}
+
+productsContainer.container.addEventListener('click', (e) => {
+  const sendBtn = e.target.closest('.p-send-btn');
+  const editBtn = e.target.closest('.p-edit-btn');
+  if(sendBtn){
+    const card = sendBtn.closest('.repeat-card');
+    const warn = card.querySelector('.p-warn');
+    const name = card.querySelector('.p-name').value.trim();
+    if(!name){ warn.textContent = "Merci de renseigner au moins le nom du produit avant d'envoyer."; return; }
+    const p = {
+      name,
+      price: card.querySelector('.p-price').value.trim(),
+      category: card.querySelector('.p-category').value.trim(),
+      desc: card.querySelector('.p-desc').value.trim(),
+      featured: card.querySelector('.p-featured').checked,
+      stock: card.querySelector('.p-stock').value.trim()
+    };
+    const isBusiness = formuleChips.get() === 'Business';
+    const message = buildSingleProductMessage(p, isBusiness);
+    const phone = '2250151030957';
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+    lockProductCard(card);
+    renderPreview();
+    saveState();
+  } else if(editBtn){
+    const card = editBtn.closest('.repeat-card');
+    unlockProductCard(card);
+    renderPreview();
+    saveState();
+  }
+});
 
 const servicesContainer = makeRepeater('servicesContainer', 'addServiceBtn', () => `
     <label>Nom du service</label>
@@ -632,8 +709,9 @@ function getCategories(){
   return Array.from(categoriesContainer.container.querySelectorAll('.repeat-card')).map(c => ({name:c.querySelector('.c-name').value.trim(), subs:c.querySelector('.c-subs').value.trim()})).filter(c=>c.name||c.subs);
 }
 function getProducts(){
-  return Array.from(productsContainer.container.querySelectorAll('.repeat-card')).map(c => ({name:c.querySelector('.p-name').value.trim(), price:c.querySelector('.p-price').value.trim(), category:c.querySelector('.p-category').value.trim(), desc:c.querySelector('.p-desc').value.trim(), featured:c.querySelector('.p-featured').checked, stock:c.querySelector('.p-stock').value.trim()})).filter(p=>p.name||p.price||p.category||p.desc);
+  return Array.from(productsContainer.container.querySelectorAll('.repeat-card')).map(c => ({name:c.querySelector('.p-name').value.trim(), price:c.querySelector('.p-price').value.trim(), category:c.querySelector('.p-category').value.trim(), desc:c.querySelector('.p-desc').value.trim(), featured:c.querySelector('.p-featured').checked, stock:c.querySelector('.p-stock').value.trim(), sent:c.dataset.sent === '1'})).filter(p=>p.name||p.price||p.category||p.desc);
 }
+function getUnsentProducts(){ return getProducts().filter(p => !p.sent); }
 function getServices(){
   if(!document.getElementById('servicesToggle').checked) return [];
   return Array.from(servicesContainer.container.querySelectorAll('.repeat-card')).map(c => ({name:c.querySelector('.s-name').value.trim(), price:c.querySelector('.s-price').value.trim(), desc:c.querySelector('.s-desc').value.trim()})).filter(s=>s.name||s.price||s.desc);
@@ -670,7 +748,9 @@ function buildMessage(){
   const nbprod = getNbProduits();
   const date = fmtDate(document.getElementById('f_date').value);
   const categories = getCategories();
-  const products = getProducts();
+  const allProducts = getProducts();
+  const sentProducts = allProducts.filter(p => p.sent);
+  const products = allProducts.filter(p => !p.sent);
   const services = getServices();
   const facebook = document.getElementById('f_facebook').value.trim();
   const instagram = document.getElementById('f_instagram').value.trim();
@@ -719,6 +799,9 @@ function buildMessage(){
   if(notes3) l.push(`Notes : ${notes3}`);
   l.push('');
   l.push('4. Produits');
+  if(sentProducts.length){
+    l.push(`${sentProducts.length} produit(s) déjà envoyé(s) individuellement par WhatsApp avec leurs photos (voir messages précédents dans cette conversation).`);
+  }
   if(products.length){
     products.forEach((p,i) => {
       l.push(`Produit ${i+1}${p.featured ? ' (vedette)' : ''}`);
@@ -729,7 +812,7 @@ function buildMessage(){
       if(p.stock && isBusiness) l.push(`Stock : ${p.stock}`);
       l.push('');
     });
-  } else { l.push('-'); l.push(''); }
+  } else if(!sentProducts.length){ l.push('-'); l.push(''); }
   if(notes4) { l.push(`Notes : ${notes4}`); l.push(''); }
   if(services.length){
     l.push('5. Services');
@@ -781,7 +864,7 @@ function renderPreview(){
   if(activite) html += `Activité : ${activite}\n`;
   html += `Formule : ${formule || '<span class="muted">…</span>'}\n`;
   if(categories.length){ html += `\n<span class="line-title">Catégories (${categories.length})</span>\n`; categories.forEach((c,i)=>html+=`${i+1}. ${c.name || '…'}\n`); }
-  if(products.length){ html += `\n<span class="line-title">Catalogue (${products.length})</span>\n`; products.forEach((p,i)=>html+=`${i+1}. ${p.name || '…'}${p.price ? ' — ' + fmtFCFA(Number(p.price)) : ''}${p.featured ? ' ★' : ''}\n`); }
+  if(products.length){ html += `\n<span class="line-title">Catalogue (${products.length})</span>\n`; products.forEach((p,i)=>html+=`${i+1}. ${p.name || '…'}${p.price ? ' — ' + fmtFCFA(Number(p.price)) : ''}${p.featured ? ' ★' : ''}${p.sent ? ' <span class="muted">✓ envoyé</span>' : ''}\n`); }
   if(services.length){ html += `\n<span class="line-title">Services (${services.length})</span>\n`; services.forEach((s,i)=>html+=`${i+1}. ${s.name || '…'}\n`); }
   bubble.innerHTML = html;
 }
@@ -806,7 +889,7 @@ function collectState(){
     consent: document.getElementById('f_consent').checked,
     paiements: getPaiements(),
     categories: Array.from(categoriesContainer.container.querySelectorAll('.repeat-card')).map(c => ({name:c.querySelector('.c-name').value, subs:c.querySelector('.c-subs').value})),
-    products: Array.from(productsContainer.container.querySelectorAll('.repeat-card')).map(c => ({name:c.querySelector('.p-name').value, price:c.querySelector('.p-price').value, category:c.querySelector('.p-category').value, desc:c.querySelector('.p-desc').value, featured:c.querySelector('.p-featured').checked, stock:c.querySelector('.p-stock').value})),
+    products: Array.from(productsContainer.container.querySelectorAll('.repeat-card')).map(c => ({name:c.querySelector('.p-name').value, price:c.querySelector('.p-price').value, category:c.querySelector('.p-category').value, desc:c.querySelector('.p-desc').value, featured:c.querySelector('.p-featured').checked, stock:c.querySelector('.p-stock').value, sent:c.dataset.sent === '1'})),
     services: Array.from(servicesContainer.container.querySelectorAll('.repeat-card')).map(c => ({name:c.querySelector('.s-name').value, price:c.querySelector('.s-price').value, desc:c.querySelector('.s-desc').value}))
   };
 }
@@ -903,6 +986,12 @@ function loadState(){
 
   restoreRepeater(categoriesContainer, saved.categories, {name:'.c-name', subs:'.c-subs'});
   restoreRepeater(productsContainer, saved.products, {name:'.p-name', price:'.p-price', category:'.p-category', desc:'.p-desc', featured:'.p-featured', stock:'.p-stock'});
+  if(saved.products && saved.products.length){
+    const productCards = productsContainer.container.querySelectorAll('.repeat-card');
+    saved.products.forEach((item, i) => {
+      if(item.sent && productCards[i]) lockProductCard(productCards[i]);
+    });
+  }
   restoreRepeater(servicesContainer, saved.services, {name:'.s-name', price:'.s-price', desc:'.s-desc'});
 
   currentStep = saved.step && saved.step >= 1 && saved.step <= totalSteps ? saved.step : 1;
