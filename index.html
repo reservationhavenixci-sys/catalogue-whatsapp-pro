@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HAVENIXCI — Catalogue WhatsApp Pro</title>
+<meta name="description" content="Vendez avec un lien, pas avec un fouillis de photos. Catalogue WhatsApp Pro par HAVENIXCI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#offres">Aller aux offres</a>
+
+<!-- HEADER -->
+<header class="site-header" id="top">
+  <div class="wrap header-inner">
+    <a href="#top" class="logo">HAVENI<span>X</span>CI</a>
+    <a class="header-cta" href="#offres">Voir les offres</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="accueil">
+    <div class="wrap hero-inner">
+      <p class="eyebrow">Catalogue WhatsApp Pro</p>
+      <h1 class="hero-title">Vendez avec un lien,<br>pas avec un fouillis de photos.</h1>
+      <p class="hero-text">Vous voulez présenter vos produits proprement et recevoir vos commandes plus facilement ? Choisissez l'offre qui vous convient et envoyez-nous votre choix pour préparer votre projet.</p>
+      <a href="#offres" class="btn btn-primary btn-lg">Choisir mon offre</a>
+    </div>
+  </section>
+
+  <!-- OFFRES -->
+  <section class="offers" id="offres">
+    <div class="wrap">
+      <h2 class="section-title">Nos offres</h2>
+
+      <div class="offer-grid">
+
+        <!-- STARTER -->
+        <article class="offer-card reveal" data-offer="starter">
+          <div class="offer-head">
+            <h3 class="offer-name">Starter</h3>
+            <p class="offer-price">20 000 <span>FCFA</span></p>
+          </div>
+          <p class="offer-tagline">Pour les vendeurs qui veulent aller vite et commencer simplement.</p>
+
+          <button type="button" class="btn btn-outline offer-details-toggle blink-btn" aria-expanded="false" aria-controls="panel-starter">
+            Voir les détails de l'offre
+          </button>
+
+          <div class="offer-panel" id="panel-starter" hidden>
+            <div class="offer-panel-inner">
+              <h4>Idéal pour :</h4>
+              <ul class="check-list">
+                <li>montrer ses produits proprement</li>
+                <li>partager un lien clair</li>
+                <li>recevoir les messages sur WhatsApp</li>
+                <li>avoir une boutique simple et lisible</li>
+              </ul>
+              <h4>Inclus :</h4>
+              <ul class="check-list">
+                <li>jusqu'à 20 produits ou services</li>
+                <li>catalogue simple</li>
+                <li>bouton WhatsApp</li>
+                <li>lien partageable</li>
+                <li>page d'accueil avec l'affiche ou les informations principales du vendeur</li>
+              </ul>
+
+              <button type="button" class="btn btn-primary confirm-offer-btn" data-offer-confirm="starter">
+                Je prends cette offre
+              </button>
+
+              <!-- Formulaire de commande (caché tant que l'offre n'est pas confirmée) -->
+              <div class="order-form-wrapper" id="order-wrapper-starter" hidden>
+                <form class="order-form" data-offer-form="starter" novalidate>
+                  <div class="field">
+                    <label for="starter-nom">Nom *</label>
+                    <input type="text" id="starter-nom" name="nom" required autocomplete="name">
+                  </div>
+                  <div class="field">
+                    <label for="starter-boutique">Nom de la boutique *</label>
+                    <input type="text" id="starter-boutique" name="boutique" required>
+                  </div>
+                  <div class="field">
+                    <label for="starter-ville">Ville *</label>
+                    <input type="text" id="starter-ville" name="ville" required autocomplete="address-level2">
+                  </div>
+                  <div class="field">
+                    <label for="starter-whatsapp">Contact WhatsApp *</label>
+                    <input type="tel" id="starter-whatsapp" name="whatsapp" required autocomplete="tel" placeholder="07 00 00 00 00">
+                  </div>
+                  <div class="field">
+                    <label for="starter-infos">Autres informations utiles</label>
+                    <textarea id="starter-infos" name="infos" rows="3"></textarea>
+                  </div>
+
+                  <div class="save-indicator" aria-live="polite"></div>
+
+                  <a href="https://wa.me/2250151030957?text=Bonjour%2C%20je%20souhaite%20l%27offre%20Starter%20(20%20000%20FCFA).%0A%0AVoici%20mes%20informations%20%3A%0ANom%20%3A%0ANom%20de%20la%20boutique%20%3A%0AVille%20%3A%0AContact%20WhatsApp%20%3A%0AAutres%20informations%20%3A" class="catalogue-link" data-catalogue-target="catalogue-starter" target="_blank" rel="noopener">
+                    Envoyer sur WhatsApp →
+                  </a>
+                </form>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- BUSINESS -->
+        <article class="offer-card offer-card--featured reveal" data-offer="business">
+          <p class="offer-badge">Le plus complet</p>
+          <div class="offer-head">
+            <h3 class="offer-name">Business</h3>
+            <p class="offer-price">40 000 <span>FCFA</span></p>
+          </div>
+          <p class="offer-tagline">Pour les vendeurs qui veulent une organisation complète.</p>
+
+          <button type="button" class="btn btn-primary offer-details-toggle blink-btn" aria-expanded="false" aria-controls="panel-business">
+            Voir les détails de l'offre
+          </button>
+
+          <div class="offer-panel" id="panel-business" hidden>
+            <div class="offer-panel-inner">
+              <h4>Idéal pour :</h4>
+              <ul class="check-list">
+                <li>avoir une boutique plus sérieuse</li>
+                <li>présenter plus d'articles</li>
+                <li>faciliter la commande</li>
+                <li>mieux suivre les ventes</li>
+                <li>offrir une meilleure expérience au client</li>
+              </ul>
+              <h4>Inclus :</h4>
+              <ul class="check-list">
+                <li>jusqu'à 50 produits ou services</li>
+                <li>catalogue complet</li>
+                <li>panier avec image du produit choisi</li>
+                <li>total automatique</li>
+                <li>livraison simple</li>
+                <li>facture simple</li>
+                <li>stock simple</li>
+                <li>localisation simple</li>
+                <li>bouton WhatsApp</li>
+                <li>page d'accueil avec l'affiche ou les informations principales du vendeur</li>
+                <li>liens réseaux sociaux (Facebook, TikTok, Instagram)</li>
+              </ul>
+              <p class="offer-note">Quand le client ajoute un produit au panier, il voit aussi l'image de l'article choisi. Le panier reste simple, visuel et clair, afin de faciliter la commande.</p>
+
+              <button type="button" class="btn btn-primary confirm-offer-btn" data-offer-confirm="business">
+                Je prends cette offre
+              </button>
+
+              <!-- Formulaire de commande (caché tant que l'offre n'est pas confirmée) -->
+              <div class="order-form-wrapper" id="order-wrapper-business" hidden>
+                <form class="order-form" data-offer-form="business" novalidate>
+                  <div class="field">
+                    <label for="business-nom">Nom *</label>
+                    <input type="text" id="business-nom" name="nom" required autocomplete="name">
+                  </div>
+                  <div class="field">
+                    <label for="business-boutique">Nom de la boutique *</label>
+                    <input type="text" id="business-boutique" name="boutique" required>
+                  </div>
+                  <div class="field">
+                    <label for="business-ville">Ville *</label>
+                    <input type="text" id="business-ville" name="ville" required autocomplete="address-level2">
+                  </div>
+                  <div class="field">
+                    <label for="business-whatsapp">Contact WhatsApp *</label>
+                    <input type="tel" id="business-whatsapp" name="whatsapp" required autocomplete="tel" placeholder="07 00 00 00 00">
+                  </div>
+                  <div class="field">
+                    <label for="business-infos">Autres informations utiles</label>
+                    <textarea id="business-infos" name="infos" rows="3"></textarea>
+                  </div>
+
+                  <div class="save-indicator" aria-live="polite"></div>
+
+                  <a href="https://wa.me/2250151030957?text=Bonjour%2C%20je%20souhaite%20l%27offre%20Business%20(40%20000%20FCFA).%0A%0AVoici%20mes%20informations%20%3A%0ANom%20%3A%0ANom%20de%20la%20boutique%20%3A%0AVille%20%3A%0AContact%20WhatsApp%20%3A%0AAutres%20informations%20%3A" class="catalogue-link" data-catalogue-target="catalogue-business" target="_blank" rel="noopener">
+                    Envoyer sur WhatsApp →
+                  </a>
+                </form>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CATALOGUE -->
+  <section class="catalogue" id="catalogue">
+    <div class="wrap">
+
+      <div id="catalogue-starter" class="catalogue-block reveal" hidden>
+        <h3 class="catalogue-title">Catalogue — Starter</h3>
+        <div class="catalogue-products" data-catalogue="starter"></div>
+        <button type="button" class="btn btn-outline add-product-btn" data-catalogue-target="starter">+ Ajouter un produit</button>
+      </div>
+
+      <div id="catalogue-business" class="catalogue-block reveal" hidden>
+        <h3 class="catalogue-title">Catalogue — Business</h3>
+        <div class="catalogue-products" data-catalogue="business"></div>
+        <button type="button" class="btn btn-outline add-product-btn" data-catalogue-target="business">+ Ajouter un produit</button>
+      </div>
+
+      <!-- Modèle d'une ligne produit (cloné en JS) -->
+      <template id="product-row-template">
+        <div class="product-row">
+          <button type="button" class="product-remove" aria-label="Supprimer ce produit">&times;</button>
+          <div class="field">
+            <label>Nom du produit</label>
+            <input type="text" class="p-name" placeholder="Ex : Robe wax">
+          </div>
+          <div class="field">
+            <label>Description</label>
+            <input type="text" class="p-desc" placeholder="Courte description">
+          </div>
+          <div class="field field--sm">
+            <label>Prix (FCFA)</label>
+            <input type="number" min="0" class="p-price" placeholder="0">
+          </div>
+          <div class="field">
+            <label>Image (lien URL)</label>
+            <input type="url" class="p-image" placeholder="https://...">
+          </div>
+        </div>
+      </template>
+
+      <!-- ACCÈS AU CATALOGUE (après confirmation par WhatsApp) -->
+      <div class="catalogue-access-block" id="acces-catalogue">
+        <p class="section-lead">Une fois votre offre confirmée sur WhatsApp, cliquez ici pour remplir votre catalogue.</p>
+        <a href="#offres" class="btn btn-primary catalogue-access-btn" id="remplir-catalogue-btn" aria-disabled="true">
+          Remplir mon catalogue →
+        </a>
+        <p class="catalogue-access-hint" data-catalogue-hint hidden>Choisissez d'abord une offre ci-dessus pour débloquer votre catalogue.</p>
+      </div>
+
+      <!-- PAIEMENT -->
+      <div class="payment-block reveal" id="paiement">
+        <h3>Mode de paiement</h3>
+        <p class="section-lead">Choisissez votre acompte. Le montant est calculé automatiquement selon l'offre choisie.</p>
+
+        <div class="payment-grid">
+          <div class="field">
+            <span class="field-label-static">Offre sélectionnée</span>
+            <p class="payment-offer-name" data-payment="offer-name">Aucune offre sélectionnée</p>
+          </div>
+
+          <fieldset class="field">
+            <legend>Mode de paiement</legend>
+            <div class="radio-row">
+              <label class="radio-pill"><input type="radio" name="acompte" value="50" checked> Acompte 50%</label>
+              <label class="radio-pill"><input type="radio" name="acompte" value="100"> Paiement intégral 100%</label>
+            </div>
+            <p class="field-hint" data-payment="acompte-hint">Paiement partiel à la commande, solde à la livraison.</p>
+          </fieldset>
+
+          <div class="field">
+            <label for="date-paiement">Date de paiement prévue</label>
+            <input type="date" id="date-paiement" name="date-paiement">
+          </div>
+        </div>
+
+        <div class="payment-summary" aria-live="polite">
+          <div class="payment-line">
+            <span>Prix total de l'offre</span>
+            <strong data-payment="total">—</strong>
+          </div>
+          <div class="payment-line">
+            <span data-payment="acompte-label">Acompte à payer</span>
+            <strong data-payment="acompte">—</strong>
+          </div>
+          <div class="payment-line">
+            <span>Solde restant</span>
+            <strong data-payment="solde">—</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONDITIONS -->
+      <div class="conditions-block reveal">
+        <h3>Conditions</h3>
+        <ul class="check-list">
+          <li>Paiement par Wave / Moov Money au <a href="tel:+2250151030957">01 51 03 09 57</a></li>
+          <li>3 modifications mineures gratuites dans les 7 jours suivant la livraison</li>
+          <li>Toute modification supplémentaire sera facturée séparément</li>
+          <li>Hébergement / mise en ligne inclus selon la formule choisie</li>
+          <li>Livraison du lien après confirmation du paiement</li>
+        </ul>
+        <p class="conditions-thanks">Merci pour votre confiance.</p>
+      </div>
+
+      <!-- OPTIONS DE SUIVI (rattachées aux conditions ci-dessus) -->
+      <div class="followup" id="suivi">
+        <div class="followup-connector" aria-hidden="true"></div>
+        <h3 class="followup-heading">Et après la livraison ? Nos options de suivi</h3>
+        <p class="followup-intro">Une fois votre catalogue livré, vous pouvez continuer à le faire évoluer grâce à l'une de ces deux options.</p>
+
+        <div class="followup-list">
+
+          <div class="followup-item reveal">
+            <button type="button" class="followup-toggle" aria-expanded="false" aria-controls="followup-mensuel">
+              <span>Option Mensuelle — 10 000 FCFA / mois</span>
+              <span class="followup-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="followup-panel" id="followup-mensuel" hidden>
+              <p class="followup-lead">Pour les clients qui veulent un suivi régulier.</p>
+              <h4>Essentiel :</h4>
+              <ul class="check-list">
+                <li>petites modifications mensuelles</li>
+                <li>changement d'images ou de textes</li>
+                <li>mise à jour de prix</li>
+                <li>ajustements simples du catalogue</li>
+                <li>jusqu'à 2 petites modifications par mois</li>
+              </ul>
+              <p class="followup-note"><strong>Note :</strong> cette formule couvre seulement des changements simples et limités. Si le client demande plus de 2 modifications dans le mois, ou si les changements sont plus grands que prévu, le prix peut être revu.</p>
+            </div>
+          </div>
+
+          <div class="followup-item reveal">
+            <button type="button" class="followup-toggle" aria-expanded="false" aria-controls="followup-demande">
+              <span>Option Modification à la demande — 5 000 FCFA</span>
+              <span class="followup-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="followup-panel" id="followup-demande" hidden>
+              <p class="followup-lead">Pour les clients qui veulent seulement une intervention ponctuelle.</p>
+              <h4>Essentiel :</h4>
+              <ul class="check-list">
+                <li>correction ou changement simple</li>
+                <li>ajout ou remplacement de texte</li>
+                <li>mise à jour d'image</li>
+                <li>petits ajustements du catalogue</li>
+              </ul>
+              <p class="followup-note"><strong>Note :</strong> cette formule couvre une seule petite modification simple. Si la demande est plus importante, touche plusieurs éléments, ou dépasse le cadre prévu, un nouveau tarif peut être appliqué.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- POURQUOI NOUS CHOISIR -->
+  <section class="why" id="pourquoi">
+    <div class="wrap">
+      <h2 class="section-title">Pourquoi choisir HAVENIXCI ?</h2>
+      <ul class="why-list reveal">
+        <li>Pour vendre plus simplement</li>
+        <li>Pour réduire le désordre sur WhatsApp</li>
+        <li>Pour afficher vos produits ou services proprement</li>
+        <li>Pour gagner du temps</li>
+        <li>Pour avoir une solution claire et professionnelle</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- COMMENT ÇA MARCHE -->
+  <section class="steps" id="comment">
+    <div class="wrap">
+      <h2 class="section-title">Comment ça marche</h2>
+      <ol class="steps-list">
+        <li class="step reveal">
+          <span class="step-num">1</span>
+          <p>Vous nous envoyez les infos de vos produits ou services.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step-num">2</span>
+          <p>Nous préparons votre catalogue.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step-num">3</span>
+          <p>Nous mettons votre affiche ou votre fiche d'accueil.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step-num">4</span>
+          <p>Vos clients consultent le lien et choisissent ce qui les intéresse.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step-num">5</span>
+          <p>La commande est organisée et transmise sur WhatsApp.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap contact-inner reveal">
+      <h2 class="section-title">Contact</h2>
+      <ul class="contact-list">
+        <li><span>Email</span><a href="mailto:reservationhavenixci@gmail.com">reservationhavenixci@gmail.com</a></li>
+        <li><span>WhatsApp</span><a href="https://wa.me/2250151030957">01 51 03 09 57</a> / <a href="https://wa.me/2250778746077">07 78 74 60 77</a></li>
+        <li><span>Appel</span><a href="tel:+2250798016927">07 98 01 69 27</a> / <a href="tel:+2250778746077">07 78 74 60 77</a></li>
+      </ul>
+
+      <a href="#offres" class="btn btn-primary btn-lg">Envoyer ma commande sur WhatsApp</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>&copy; <span id="year"></span> HAVENIXCI — Catalogue WhatsApp Pro</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
