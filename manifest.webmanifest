@@ -1,0 +1,17 @@
+{
+  "name": "Havenixci Catalogue",
+  "short_name": "Havenixci",
+  "description": "Catalogue WhatsApp Pro — vendez avec un lien, pas avec le désordre.",
+  "start_url": "./index.html?source=pwa",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0A1B3D",
+  "theme_color": "#0A1B3D",
+  "lang": "fr",
+  "icons": [
+    { "src": "icons/logo-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/logo-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/logo-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

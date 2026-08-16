@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Havenixci — Fiche de création de site et catalogue</title>
+<link rel="icon" type="image/jpeg" href="data:image/jpeg;base64,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">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+  :root{
+    --bg:#EEF2F9; --paper:#FFFFFF; --ink:#0A1B3D; --ink-soft:#5D6B82; --line:#DDE4EF;
+    --blue:#0A1B3D; --blue-dark:#071022; --yellow:#F7B500; --yellow-ink:#7A5900;
+    --wa-green:#25D366; --wa-green-dark:#128C4A; --bubble:#DCF5E4; --danger:#B3432F;
+    --shadow-card:0 14px 40px -18px rgba(7,16,34,0.28), 0 2px 8px rgba(7,16,34,0.06);
+    --font-num:'Space Grotesk', sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; color:var(--ink); font-family:'Inter',sans-serif; padding:32px 16px 64px;
+    background:
+      radial-gradient(900px 420px at 8% -8%, rgba(27,79,140,0.10), transparent 60%),
+      radial-gradient(700px 380px at 105% 10%, rgba(244,180,0,0.12), transparent 55%),
+      var(--bg);
+    background-attachment:fixed;
+    animation:pageFade .5s ease both;
+  }
+  @keyframes pageFade{ from{opacity:0;} to{opacity:1;} }
+  .wrap{max-width:980px; margin:0 auto;}
+  .masthead{ display:flex; align-items:baseline; justify-content:space-between; gap:16px; margin-bottom:6px; flex-wrap:wrap; }
+  .brand{ font-family:'Fraunces',serif; font-weight:600; font-size:26px; letter-spacing:0.02em; color:var(--blue-dark); }
+  .brand span{color:var(--yellow-ink);}
+  .contact-line{ font-size:12.5px; color:var(--ink-soft); margin-bottom:16px; }
+  .intro{
+    font-size:13px; color:var(--ink-soft); line-height:1.6; background:var(--paper);
+    border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:10px;
+  }
+  .scope-note{
+    font-size:12px; color:var(--blue-dark); line-height:1.6; background:#EAF1FB;
+    border:1px solid #C9DAF0; border-radius:10px; padding:10px 16px; margin-bottom:18px;
+  }
+
+  .progress-wrap{ margin-bottom:24px; }
+  .progress-label{
+    display:flex; justify-content:space-between; font-size:12px; color:var(--ink-soft);
+    margin-bottom:8px; font-weight:500;
+  }
+  .progress-label span:last-child{ color:var(--blue-dark); font-weight:600; }
+  .progress-bar-outer{ height:6px; background:var(--line); border-radius:4px; overflow:hidden; }
+  .progress-bar-inner{
+    height:100%; background:linear-gradient(90deg,var(--blue),var(--yellow));
+    background-size:200% 100%; border-radius:4px; transition:width 0.35s cubic-bezier(.4,0,.2,1);
+    animation:barShine 3s linear infinite;
+  }
+  @keyframes barShine{ 0%{background-position:0% 0;} 100%{background-position:200% 0;} }
+  .progress-dots{ display:flex; gap:6px; margin-top:9px; }
+  .progress-dot{ flex:1; height:4px; border-radius:3px; background:var(--line); transition:background .25s ease; }
+  .progress-dot.done{ background:var(--blue); }
+  .progress-dot.current{ background:var(--yellow); }
+
+  .grid{ display:grid; grid-template-columns:1.15fr 0.85fr; gap:24px; align-items:start; }
+  @media (max-width:760px){ .grid{grid-template-columns:1fr;} }
+
+  .card{
+    background:var(--paper); border:1px solid var(--line); border-radius:16px;
+    padding:28px 28px 24px; position:relative; box-shadow:var(--shadow-card);
+    overflow:hidden;
+  }
+  .card::before{
+    content:""; position:absolute; top:0; left:0; right:0; height:4px;
+    background:linear-gradient(90deg,var(--blue) 0%, var(--yellow) 50%, var(--blue) 100%);
+    background-size:200% 100%; animation:barShine 4s linear infinite;
+  }
+  .step-title{ display:flex; align-items:center; gap:12px; margin:4px 0 6px; }
+  .badge{
+    width:30px; height:30px; border-radius:50%; background:linear-gradient(155deg,var(--blue),var(--blue-dark));
+    color:var(--yellow); box-shadow:0 4px 10px -2px rgba(15,54,96,0.5);
+    display:flex; align-items:center; justify-content:center; font-family:var(--font-num); font-weight:600; font-size:13px; flex-shrink:0;
+  }
+  .step-title h2{ margin:0; font-size:15px; font-weight:600; color:var(--blue-dark); text-transform:uppercase; letter-spacing:0.06em; }
+  .step-sub{ font-size:12.5px; color:var(--ink-soft); margin:0 0 16px 42px; line-height:1.5; }
+
+  .wizard-step{ display:none; }
+  .wizard-step.active{ display:block; animation:stepIn .38s cubic-bezier(.22,.61,.36,1) both; }
+  @keyframes stepIn{ from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);} }
+
+  label{ display:block; font-size:13px; color:var(--ink-soft); margin-bottom:5px; margin-top:14px; font-weight:500; }
+  input[type=text], input[type=tel], input[type=number], input[type=date], input[type=url], textarea{
+    width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:7px;
+    background:#FBFCFE; font-family:'Inter',sans-serif; font-size:14.5px; color:var(--ink);
+  }
+  textarea{ resize:vertical; min-height:56px; }
+  input:focus, textarea:focus{ outline:none; border-color:var(--blue); box-shadow:0 0 0 3px rgba(27,79,140,0.12); }
+  .two-col{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .fcfa-input{position:relative;}
+  .fcfa-input span{ position:absolute; right:12px; top:50%; transform:translateY(50%); font-size:12px; color:var(--ink-soft); }
+
+  .chip-grid{ display:flex; flex-wrap:wrap; gap:8px; margin-top:6px; }
+  .chip{
+    border:1px solid var(--line); border-radius:20px; padding:7px 14px; font-size:13px;
+    background:#FBFCFE; cursor:pointer; color:var(--ink-soft); user-select:none;
+    transition:transform .12s ease, border-color .15s, background .15s, color .15s, box-shadow .15s;
+  }
+  .chip:hover{ border-color:var(--blue); transform:translateY(-1px); }
+  .chip.selected{ border-color:var(--blue); background:var(--blue); color:#fff; font-weight:500; animation:chipPop .22s ease; box-shadow:0 4px 10px -3px rgba(27,79,140,0.5); }
+  @keyframes chipPop{ 0%{transform:scale(1);} 45%{transform:scale(1.08);} 100%{transform:scale(1);} }
+  .chip-hint{ font-size:12px; color:var(--ink-soft); margin-top:8px; }
+
+  .example-hint{
+    margin-top:12px; background:#FFF9E8; border:1px solid #F0DFA6; border-radius:7px;
+    padding:10px 14px; font-size:12.5px; color:var(--yellow-ink); line-height:1.6; display:none;
+  }
+  .example-hint.visible{ display:block; }
+  .example-hint strong{ display:block; margin-bottom:2px; }
+
+  .toggle-row{ display:flex; align-items:center; justify-content:space-between; margin-top:12px; padding:12px 14px; background:#FBFCFE; border:1px solid var(--line); border-radius:8px; }
+  .toggle-row span{ font-size:13.5px; font-weight:500; color:var(--ink); }
+  .header-bar{ display:flex; align-items:center; gap:14px; margin-bottom:12px; }
+  .logo-mark{
+    width:48px; height:48px; border-radius:14px; background:linear-gradient(155deg,var(--blue),var(--blue-dark));
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+    font-family:'Fraunces',serif; font-weight:600; font-size:20px; color:var(--yellow);
+    box-shadow:0 6px 16px -4px rgba(15,54,96,0.45);
+    animation:logoPop .5s cubic-bezier(.34,1.56,.64,1) both;
+  }
+  @keyframes logoPop{ from{opacity:0; transform:scale(.6) rotate(-8deg);} to{opacity:1; transform:scale(1) rotate(0);} }
+  .header-text{flex:1; min-width:0;}
+  .header-sub{ font-size:12.5px; color:var(--ink-soft); margin-top:1px; }
+  .pill{
+    display:inline-flex; align-items:center; gap:6px; font-size:11.5px; font-weight:600;
+    border-radius:20px; padding:6px 13px; line-height:1.3; flex-shrink:0;
+    color:var(--yellow-ink); background:#FFF6DC; border:1px solid #F0DFA6;
+  }
+  .switch{ position:relative; width:42px; height:24px; flex-shrink:0; }
+  .switch input{ opacity:0; width:0; height:0; }
+  .slider-track{
+    position:absolute; inset:0; background:var(--line); border-radius:24px; cursor:pointer; transition:0.2s;
+  }
+  .slider-track::before{
+    content:""; position:absolute; width:18px; height:18px; left:3px; top:3px; background:#fff;
+    border-radius:50%; transition:0.2s;
+  }
+  .switch input:checked + .slider-track{ background:var(--blue); }
+  .switch input:checked + .slider-track::before{ transform:translateX(18px); }
+
+  .hidden-section{ display:none; margin-top:6px; }
+  .hidden-section.visible{ display:block; }
+  body:not(.formule-plus) .business-only{ display:none !important; }
+  body:not(.formule-pro) .pro-only{ display:none !important; }
+  body:not(.formule-sur-mesure) .surmesure-only{ display:none !important; }
+  .formule-sur-mesure .surmesure-hide{ display:none !important; }
+
+  .plan-grid{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:8px; }
+  @media (max-width:560px){ .plan-grid{ grid-template-columns:1fr; } }
+  .plan-card{
+    border:1.5px solid var(--line); border-radius:14px; padding:16px 16px 14px; background:#FBFCFE;
+    cursor:pointer; position:relative; transition:border-color .18s, box-shadow .18s, transform .18s;
+  }
+  .plan-card:hover{ border-color:var(--blue); transform:translateY(-3px); box-shadow:0 12px 24px -12px rgba(27,79,140,0.35); }
+  .plan-card.selected{
+    border-color:var(--blue); background:#F5F9FF;
+    box-shadow:0 0 0 3px rgba(27,79,140,0.14), 0 12px 26px -12px rgba(27,79,140,0.4);
+    animation:cardPick .28s cubic-bezier(.34,1.56,.64,1);
+  }
+  @keyframes cardPick{ 0%{transform:scale(1);} 40%{transform:scale(1.025);} 100%{transform:scale(1);} }
+  .plan-card.selected::after{
+    content:"✓ Choisie"; position:absolute; top:-11px; right:14px; background:var(--blue); color:#fff;
+    font-size:11px; font-weight:600; padding:3px 10px; border-radius:20px; box-shadow:0 3px 8px -2px rgba(27,79,140,0.5);
+  }
+  .plan-card.recommended::before{
+    content:"★ Le plus choisi"; position:absolute; top:-11px; left:14px; background:var(--yellow); color:var(--yellow-ink);
+    font-size:11px; font-weight:700; padding:3px 10px; border-radius:20px; box-shadow:0 3px 8px -2px rgba(244,180,0,0.5);
+  }
+  .plan-card.recommended.selected::before{ display:none; }
+  .plan-name{ font-family:'Fraunces',serif; font-weight:600; font-size:16px; color:var(--blue-dark); margin:6px 0 2px; }
+  .plan-price{ font-family:var(--font-num); font-size:19px; font-weight:700; color:var(--ink); }
+  .plan-price span{ font-size:12px; font-weight:500; color:var(--ink-soft); }
+  .plan-tagline{ font-size:12px; color:var(--ink-soft); margin:4px 0 10px; line-height:1.5; min-height:32px; }
+  .plan-included{ list-style:none; margin:0; padding:0; }
+  .plan-included li{ display:flex; gap:7px; align-items:flex-start; font-size:12px; color:var(--ink); padding:3px 0; line-height:1.45; }
+  .plan-included li::before{ content:"✓"; color:var(--blue); font-weight:700; flex-shrink:0; }
+  .plan-more-toggle{ font-size:11.5px; color:var(--blue-dark); font-weight:600; margin-top:8px; text-decoration:underline; cursor:pointer; display:inline-block; }
+  .plan-extra{ display:none; margin-top:2px; }
+  .plan-extra.open{ display:block; }
+  .plan-recap{
+    margin-top:14px; background:#EAF1FB; border:1px solid #C9DAF0; border-radius:9px; padding:12px 14px;
+    font-size:12.5px; color:var(--blue-dark); line-height:1.6; display:none;
+  }
+  .plan-recap.visible{ display:block; }
+  .plan-recap strong{ display:block; margin-bottom:2px; color:var(--blue-dark); }
+
+  .repeat-card{
+    border:1px solid var(--line); border-radius:8px; padding:14px 16px 8px; background:#FBFCFE; margin-top:14px; position:relative;
+  }
+  .repeat-card .repeat-num{ position:absolute; top:-10px; left:14px; background:var(--yellow); color:var(--yellow-ink); font-size:11px; font-weight:600; padding:2px 9px; border-radius:10px; }
+  .repeat-remove{ position:absolute; top:10px; right:10px; background:none; border:none; color:var(--danger); font-size:12px; cursor:pointer; font-weight:500; }
+  .add-btn{ width:100%; margin-top:14px; padding:10px; border:1px dashed var(--blue); border-radius:9px; background:none; color:var(--blue-dark); font-size:13.5px; font-weight:500; cursor:pointer; transition:background .15s, transform .12s; }
+  .add-btn:hover{ background:rgba(27,79,140,0.06); transform:translateY(-1px); }
+  .add-btn:active{ transform:translateY(0) scale(.98); }
+
+  .checkbox-row{ display:flex; align-items:center; gap:8px; margin-top:10px; }
+  .checkbox-row input{ accent-color:var(--blue); }
+  .checkbox-row label{ margin:0; font-size:13px; color:var(--ink-soft); font-weight:400; }
+  .checkbox-grid{ display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-top:6px; }
+
+  .photo-note{ margin-top:16px; display:flex; gap:10px; align-items:flex-start; background:#EAF1FB; border:1px solid #C9DAF0; border-radius:7px; padding:12px 14px; }
+  .photo-note p{ margin:0; font-size:12.5px; color:var(--ink-soft); line-height:1.5; }
+  .photo-note strong{ color:var(--blue-dark); }
+
+  .info-list{ list-style:none; margin:0; padding:0; }
+  .info-list li{ display:flex; gap:10px; align-items:flex-start; font-size:13.5px; color:var(--ink-soft); padding:6px 0; line-height:1.5; }
+  .info-list li::before{ content:"✓"; color:var(--blue); font-weight:600; flex-shrink:0; width:18px; height:18px; border-radius:50%; background:rgba(27,79,140,0.1); display:flex; align-items:center; justify-content:center; font-size:11px; margin-top:1px; }
+
+  .consent{ margin-top:16px; display:flex; gap:10px; align-items:flex-start; background:#FFF9E8; border:1px solid #F0DFA6; border-radius:7px; padding:12px 14px; }
+  .consent input{margin-top:3px; accent-color:var(--yellow-ink);}
+  .consent p{ margin:0; font-size:12.5px; color:var(--ink-soft); line-height:1.5; }
+
+  .step-nav{ display:flex; gap:10px; margin-top:22px; }
+  .nav-btn{
+    flex:1; padding:12px; border-radius:9px; font-size:14px; font-weight:600; cursor:pointer;
+    font-family:'Inter',sans-serif; transition:transform .12s ease, background .15s, box-shadow .15s;
+  }
+  .nav-btn.back{ background:none; border:1px solid var(--line); color:var(--ink-soft); }
+  .nav-btn.back:hover{ background:#F3F6FA; }
+  .nav-btn.next{ background:linear-gradient(135deg,var(--blue),var(--blue-dark)); border:none; color:#fff; box-shadow:0 6px 16px -6px rgba(27,79,140,0.55); }
+  .nav-btn.next:hover{ transform:translateY(-2px); box-shadow:0 10px 20px -6px rgba(27,79,140,0.6); }
+  .nav-btn.next:active, .nav-btn.back:active{ transform:translateY(0) scale(.98); }
+  .send-btn{
+    width:100%; padding:14px; border:none; border-radius:9px; background:linear-gradient(135deg,var(--wa-green),var(--wa-green-dark)); color:#fff;
+    font-size:15.5px; font-weight:600; display:flex; align-items:center; justify-content:center; gap:9px;
+    cursor:pointer; font-family:'Inter',sans-serif; transition:transform .12s ease, box-shadow .15s;
+    box-shadow:0 8px 18px -6px rgba(18,140,74,0.55);
+  }
+  .send-btn:hover{ transform:translateY(-2px); box-shadow:0 12px 22px -6px rgba(18,140,74,0.6); }
+  .send-btn:active{ transform:translateY(0) scale(.98); }
+  .warn{ font-size:12px; color:var(--danger); margin-top:8px; text-align:center; min-height:14px; }
+  .field-flag{ animation:fieldFlag 1.6s ease; }
+  @keyframes fieldFlag{
+    0%,100%{ box-shadow:none; }
+    15%,45%{ box-shadow:0 0 0 3px rgba(179,67,47,0.3); border-color:var(--danger); }
+  }
+  #formuleChips.field-flag{ border-radius:14px; }
+  .helper-note{ font-size:12px; color:var(--ink-soft); text-align:center; margin-top:10px; line-height:1.5; }
+
+  .preview-sticky{position:sticky; top:20px;}
+  .phone-frame{ background:#0B141A; border-radius:20px; padding:10px 10px 14px; box-shadow:0 20px 44px -18px rgba(15,54,96,0.5); }
+  .phone-header{ display:flex; align-items:center; gap:9px; padding:8px 6px 12px; color:#E9EDEF; }
+  .avatar{ width:34px; height:34px; border-radius:50%; background:var(--blue); display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-weight:600; font-size:14px; color:var(--yellow); }
+  .phone-header .name{font-size:14px; font-weight:600;}
+  .phone-header .status{font-size:11px; color:#8696A0;}
+  .chat-area{
+    background:#0B141A; background-image:radial-gradient(#152026 1px, transparent 1px); background-size:14px 14px;
+    border-radius:8px; padding:14px 10px; min-height:420px; max-height:640px; overflow-y:auto;
+    display:flex; flex-direction:column; justify-content:flex-end;
+  }
+  .bubble{ background:var(--bubble); border-radius:8px 8px 8px 2px; padding:9px 11px; max-width:100%; font-size:12.5px; line-height:1.6; color:#111B12; white-space:pre-wrap; box-shadow:0 1px 1px rgba(0,0,0,0.15); animation:bubblePop .22s cubic-bezier(.34,1.56,.64,1); }
+  @keyframes bubblePop{ from{opacity:0; transform:translateY(4px) scale(.98);} to{opacity:1; transform:translateY(0) scale(1);} }
+  .bubble .line-title{font-weight:600; color:var(--blue-dark);}
+  .bubble .muted{color:#5B6A5F;}
+  .bubble-meta{ display:flex; justify-content:flex-end; align-items:center; gap:3px; margin-top:4px; font-family:var(--font-num); font-size:10.5px; color:#5B6A5F; white-space:nowrap; }
+  .bubble-meta .ticks{ color:#53BDEB; font-size:12px; letter-spacing:-3px; margin-left:1px; }
+  .typing-bubble{ background:var(--bubble); border-radius:8px 8px 8px 2px; padding:11px 14px; display:inline-flex; gap:4px; align-self:flex-start; box-shadow:0 1px 1px rgba(0,0,0,0.15); }
+  .typing-bubble span{ width:6px; height:6px; border-radius:50%; background:#7C8B7F; animation:typingBounce 1.2s ease-in-out infinite; }
+  .typing-bubble span:nth-child(2){ animation-delay:.15s; }
+  .typing-bubble span:nth-child(3){ animation-delay:.3s; }
+  @keyframes typingBounce{ 0%,60%,100%{transform:translateY(0); opacity:.5;} 30%{transform:translateY(-4px); opacity:1;} }
+  .typing-label{ text-align:center; font-size:11px; color:#8696A0; margin-top:10px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header-bar">
+    <a href="index.html" class="logo-mark" aria-label="Retour au site Havenixci Catalogue" style="text-decoration:none;">H</a>
+    <div class="header-text">
+      <div class="brand">HAVENIX<span>CI</span></div>
+      <div class="header-sub">Votre site internet et catalogue WhatsApp, sur mesure.</div>
+    </div>
+    <span class="pill pill-time">⏱ 5 min</span>
+  </div>
+  <div class="intro">Remplissez cette fiche pour lancer la création de votre site. Vos réponses se sauvegardent automatiquement, vous pouvez reprendre à tout moment.</div>
+  <div id="draftBanner" style="display:none; font-size:12px; color:var(--blue-dark); background:#EAF1FB; border:1px solid #C9DAF0; border-radius:8px; padding:8px 14px; margin-bottom:14px; align-items:center; justify-content:space-between; gap:10px;">
+    <span>Un brouillon précédent a été restauré.</span>
+    <button type="button" id="clearDraftBtn" style="background:none; border:none; color:var(--danger); font-size:12px; font-weight:500; cursor:pointer; text-decoration:underline;">Effacer et recommencer</button>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-label"><span id="progressText">Étape 1 sur 8</span><span id="progressStepName">Informations générales</span></div>
+    <div class="progress-bar-outer"><div class="progress-bar-inner" id="progressBar" style="width:12.5%;"></div></div>
+    <div class="progress-dots" id="progressDots"></div>
+  </div>
+
+  <div class="grid">
+    <div>
+      <div class="card">
+
+        <!-- STEP 1 -->
+        <div class="wizard-step active" data-step="1">
+          <div class="step-title"><div class="badge">1</div><h2>Informations générales</h2></div>
+
+          <label>Nom du responsable</label>
+          <input type="text" id="f_nom" placeholder="Ex : Aïcha Koné">
+
+          <label>Nom de votre boutique ou entreprise</label>
+          <input type="text" id="f_boutique" placeholder="Ex : Boutique Élégance">
+
+          <label>Type d'activité</label>
+          <div class="chip-grid" id="activityChips">
+            <div class="chip" data-value="Vêtements">Vêtements</div>
+            <div class="chip" data-value="Chaussures">Chaussures</div>
+            <div class="chip" data-value="Cosmétiques">Cosmétiques</div>
+            <div class="chip" data-value="Restaurant">Restaurant</div>
+            <div class="chip" data-value="Pâtisserie">Pâtisserie</div>
+            <div class="chip" data-value="Coiffure">Coiffure</div>
+            <div class="chip" data-value="Institut de beauté">Institut de beauté</div>
+            <div class="chip" data-value="Pharmacie">Pharmacie</div>
+            <div class="chip" data-value="Téléphones">Téléphones</div>
+            <div class="chip" data-value="Électronique">Électronique</div>
+            <div class="chip" data-value="Quincaillerie">Quincaillerie</div>
+            <div class="chip" data-value="Alimentation">Alimentation</div>
+            <div class="chip" data-value="Bijoux">Bijoux</div>
+            <div class="chip" data-value="Services">Services</div>
+            <div class="chip" data-value="Autre">Autre</div>
+          </div>
+          <div class="hidden-section" id="activityOtherWrap"><input type="text" id="f_activity_other" placeholder="Précisez votre activité"></div>
+
+          <div class="two-col">
+            <div>
+              <label>Numéro WhatsApp de commande</label>
+              <input type="tel" id="f_tel" placeholder="Ex : 07 00 00 00 00">
+            </div>
+            <div>
+              <label>Autre contact (optionnel)</label>
+              <input type="tel" id="f_tel2" placeholder="Ex : 01 00 00 00 00">
+            </div>
+          </div>
+          <div class="two-col">
+            <div>
+              <label>Ville</label>
+              <input type="text" id="f_ville" placeholder="Ex : Bouaké">
+            </div>
+            <div>
+              <label>Quartier / adresse précise</label>
+              <input type="text" id="f_quartier" placeholder="Ex : Quartier Koko">
+            </div>
+          </div>
+          <div class="business-only">
+            <label>Lien Google Maps (optionnel)</label>
+            <input type="url" id="f_maps" placeholder="Collez le lien si disponible">
+          </div>
+
+          <label>Notes complémentaires (facultatif)</label>
+          <textarea id="f_notes1" placeholder="Toute autre information utile sur vous ou votre boutique"></textarea>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="wizard-step" data-step="2">
+          <div class="step-title"><div class="badge">2</div><h2>Votre projet</h2></div>
+
+          <label>Quelle formule vous correspond ?</label>
+          <p class="step-sub" style="margin-left:0;">Choisissez la formule adaptée à votre activité.</p>
+
+          <div class="plan-grid" id="formuleChips">
+
+            <div class="plan-card" data-value="Starter">
+              <div class="plan-name">Starter</div>
+              <div class="plan-price">20 000 <span>FCFA</span></div>
+              <div class="plan-tagline">Pour démarrer vite, avec une boutique simple et lisible.</div>
+              <ul class="plan-included">
+                <li>Jusqu'à 20 produits ou services</li>
+                <li>Catalogue simple</li>
+                <li>Bouton de commande WhatsApp</li>
+                <li>Lien partageable</li>
+              </ul>
+              <span class="plan-more-toggle" data-target="extra-starter">Voir le détail</span>
+              <div class="plan-extra" id="extra-starter">
+                <ul class="plan-included">
+                  <li>Page d'accueil avec affiche et infos du vendeur</li>
+                  <li>Idéal pour montrer ses produits proprement et recevoir les messages sur WhatsApp</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="plan-card recommended" data-value="Business">
+              <div class="plan-name">Business</div>
+              <div class="plan-price">40 000 <span>FCFA</span></div>
+              <div class="plan-tagline">Pour une boutique complète, organisée et prête à vendre.</div>
+              <ul class="plan-included">
+                <li>Jusqu'à 50 produits ou services</li>
+                <li>Panier avec image du produit choisi + total automatique</li>
+                <li>Livraison simple, facture simple</li>
+                <li>Réseaux sociaux affichés (Facebook, TikTok, Instagram)</li>
+              </ul>
+              <span class="plan-more-toggle" data-target="extra-business">Voir le détail</span>
+              <div class="plan-extra" id="extra-business">
+                <ul class="plan-included">
+                  <li>Catalogue complet</li>
+                  <li>Localisation simple</li>
+                  <li>Page d'accueil avec affiche et infos du vendeur</li>
+                  <li>Idéal pour mieux suivre les ventes et offrir une meilleure expérience client</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="plan-card" data-value="BusinessPro">
+              <div class="plan-name">Business Pro</div>
+              <div class="plan-price">60 000 <span>FCFA</span></div>
+              <div class="plan-tagline">L'expérience premium, animée et interactive.</div>
+              <ul class="plan-included">
+                <li>Tout Business (jusqu'à 50 produits), plus :</li>
+                <li>Facture automatique avec frais de livraison inclus</li>
+                <li>Site installable comme une application</li>
+                <li>Filtres avancés et tri par prix, favoris interactifs</li>
+              </ul>
+              <span class="plan-more-toggle" data-target="extra-pro">Voir le détail</span>
+              <div class="plan-extra" id="extra-pro">
+                <ul class="plan-included">
+                  <li>Lien du catalogue avec logo professionnel de l'entreprise</li>
+                  <li>Partage direct d'un produit sur WhatsApp et réseaux sociaux</li>
+                  <li>Fiche de renseignement client intégrée</li>
+                  <li>Animations et micro-interactions sur tout le site</li>
+                  <li>Idéal pour se démarquer et fidéliser vos clients</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="plan-card" data-value="SurMesure">
+              <div class="plan-name">Sur mesure</div>
+              <div class="plan-price">Sur devis</div>
+              <div class="plan-tagline">Pour les catalogues de plus de 50 produits ou des besoins spécifiques.</div>
+              <ul class="plan-included">
+                <li>Plus de 50 produits ou services</li>
+                <li>Devis personnalisé, sans engagement</li>
+                <li>Besoins non couverts par Starter ou Business Pro</li>
+              </ul>
+              <span class="plan-more-toggle" data-target="extra-sur-mesure">Voir le détail</span>
+              <div class="plan-extra" id="extra-sur-mesure">
+                <ul class="plan-included">
+                  <li>Le tarif dépend du nombre de produits et de vos besoins</li>
+                  <li>Décrivez votre projet ci-dessous : nous revenons vers vous avec un prix</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="plan-recap" id="planRecap"></div>
+
+          <div class="hidden-section" id="nbProdSection">
+            <label>Nombre approximatif de produits</label>
+            <p class="chip-hint" id="nbProdAutoHint" style="display:none;"></p>
+            <div class="chip-grid" id="nbProdChips">
+              <div class="chip" data-value="1-20">Jusqu'à 20</div>
+              <div class="chip" data-value="1-50">Jusqu'à 50</div>
+              <div class="chip" data-value="Autre">Autre</div>
+            </div>
+            <div class="hidden-section" id="nbProdCustomWrap">
+              <label id="nbProdCustomLabel">Indiquez un nombre précis</label>
+              <input type="number" id="f_nbprod_custom" min="0" placeholder="Ex : 42">
+            </div>
+          </div>
+
+          <label>Date</label>
+          <input type="date" id="f_date">
+
+          <label>Notes complémentaires (facultatif)</label>
+          <textarea id="f_notes2" placeholder="Toute autre précision sur votre projet"></textarea>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="wizard-step" data-step="3">
+          <div class="step-title"><div class="badge">3</div><h2>Organisation de votre boutique</h2></div>
+          <p class="step-sub">Organisez votre catalogue par catégories, puis sous-catégories.</p>
+
+          <div class="example-hint" id="categoryExampleHint"></div>
+
+          <div id="categoriesContainer"></div>
+          <button type="button" class="add-btn" id="addCategoryBtn">+ Ajouter une catégorie</button>
+
+          <label>Notes complémentaires (facultatif)</label>
+          <textarea id="f_notes3" placeholder="Toute précision sur l'organisation de votre boutique"></textarea>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="wizard-step" data-step="4">
+          <div class="step-title"><div class="badge">4</div><h2>Vos produits</h2></div>
+          <p class="step-sub">Remplissez un produit, envoyez-le sur WhatsApp avec ses photos, puis passez au suivant. Rien n'est perdu si vous oubliez : tout produit non envoyé est inclus dans le message final.</p>
+
+          <div id="productsContainer"></div>
+          <button type="button" class="add-btn" id="addProductBtn">+ Ajouter un autre produit</button>
+
+          <label>Notes complémentaires (facultatif)</label>
+          <textarea id="f_notes4" placeholder="Toute précision générale sur vos produits"></textarea>
+        </div>
+
+        <!-- STEP 5 -->
+        <div class="wizard-step" data-step="5">
+          <div class="step-title"><div class="badge">5</div><h2>Vos services</h2></div>
+
+          <div class="toggle-row">
+            <span>Je propose aussi des services (coiffure, réparation, livraison...)</span>
+            <label class="switch">
+              <input type="checkbox" id="servicesToggle">
+              <span class="slider-track"></span>
+            </label>
+          </div>
+
+          <div class="hidden-section" id="servicesSection">
+            <div id="servicesContainer"></div>
+            <button type="button" class="add-btn" id="addServiceBtn">+ Ajouter un service</button>
+          </div>
+
+          <label>Notes complémentaires (facultatif)</label>
+          <textarea id="f_notes5" placeholder="Toute précision sur vos services"></textarea>
+        </div>
+
+        <!-- STEP 6 -->
+        <div class="wizard-step" data-step="6">
+          <div class="step-title"><div class="badge">6</div><h2>Coordonnées et présence en ligne</h2></div>
+
+          <div class="two-col business-only">
+            <div><label>Facebook (optionnel)</label><input type="url" id="f_facebook" placeholder="Lien"></div>
+            <div><label>Instagram (optionnel)</label><input type="url" id="f_instagram" placeholder="Lien"></div>
+          </div>
+          <div class="two-col">
+            <div class="business-only"><label>TikTok (optionnel)</label><input type="url" id="f_tiktok" placeholder="Lien"></div>
+            <div><label>Site internet existant (optionnel)</label><input type="url" id="f_site" placeholder="Lien"></div>
+          </div>
+
+          <label>Horaires d'ouverture</label>
+          <textarea id="f_horaires" placeholder="Ex : Lundi à samedi, 8h à 18h. Dimanche fermé."></textarea>
+
+          <div class="business-only">
+            <label>Proposez-vous la livraison ?</label>
+            <div class="chip-grid" id="livraisonChips">
+              <div class="chip" data-value="Oui">Oui</div>
+              <div class="chip" data-value="Non">Non</div>
+            </div>
+            <div class="hidden-section" id="livraisonZonesWrap">
+              <label>Zones desservies</label>
+              <input type="text" id="f_zones" placeholder="Ex : Bouaké, Abidjan, toute la Côte d'Ivoire">
+              <div class="pro-only">
+                <label>Frais de livraison (pour le calcul automatique sur la facture)</label>
+                <div class="fcfa-input"><input type="number" id="f_frais_livraison" min="0" placeholder="Ex : 1 000"><span>FCFA</span></div>
+              </div>
+            </div>
+          </div>
+
+          <label>Moyens de paiement acceptés</label>
+          <div class="checkbox-grid" id="paiementGrid">
+            <div class="checkbox-row"><input type="checkbox" value="Espèces" class="pay-opt" id="pay1"><label for="pay1">Espèces</label></div>
+            <div class="checkbox-row"><input type="checkbox" value="Wave" class="pay-opt" id="pay2"><label for="pay2">Wave</label></div>
+            <div class="checkbox-row"><input type="checkbox" value="Orange Money" class="pay-opt" id="pay3"><label for="pay3">Orange Money</label></div>
+            <div class="checkbox-row"><input type="checkbox" value="MTN Money" class="pay-opt" id="pay4"><label for="pay4">MTN Money</label></div>
+            <div class="checkbox-row"><input type="checkbox" value="Moov Money" class="pay-opt" id="pay5"><label for="pay5">Moov Money</label></div>
+            <div class="checkbox-row"><input type="checkbox" value="Carte bancaire" class="pay-opt" id="pay6"><label for="pay6">Carte bancaire</label></div>
+          </div>
+
+          <label>Notes complémentaires (facultatif)</label>
+          <textarea id="f_notes6" placeholder="Toute autre précision sur vos coordonnées ou votre présence en ligne"></textarea>
+        </div>
+
+        <!-- STEP 7 -->
+        <div class="wizard-step" data-step="7">
+          <div class="step-title"><div class="badge">7</div><h2>Personnalisation du site</h2></div>
+
+          <label>Couleur principale souhaitée</label>
+          <div class="chip-grid" id="couleurChips">
+            <div class="chip" data-value="Bleu">Bleu</div>
+            <div class="chip" data-value="Rouge">Rouge</div>
+            <div class="chip" data-value="Rose">Rose</div>
+            <div class="chip" data-value="Vert">Vert</div>
+            <div class="chip" data-value="Noir">Noir</div>
+            <div class="chip" data-value="Orange">Orange</div>
+            <div class="chip" data-value="Autre">Autre</div>
+          </div>
+          <div class="hidden-section" id="couleurOtherWrap"><input type="text" id="f_couleur_other" placeholder="Précisez la couleur"></div>
+
+          <label>Style souhaité</label>
+          <div class="chip-grid" id="styleChips">
+            <div class="chip" data-value="Moderne">Moderne</div>
+            <div class="chip" data-value="Élégant">Élégant</div>
+            <div class="chip" data-value="Luxe">Luxe</div>
+            <div class="chip" data-value="Minimaliste">Minimaliste</div>
+            <div class="chip" data-value="Coloré">Coloré</div>
+            <div class="chip" data-value="Premium">Premium</div>
+          </div>
+
+          <label>Souhaitez-vous une bannière d'accueil ?</label>
+          <div class="chip-grid" id="banniereChips">
+            <div class="chip" data-value="Oui">Oui</div>
+            <div class="chip" data-value="Non">Non</div>
+          </div>
+          <div class="hidden-section" id="banniereTexteWrap">
+            <label>Texte souhaité sur la bannière</label>
+            <input type="text" id="f_banniere_texte" placeholder="Ex : Bienvenue chez Boutique Élégance">
+          </div>
+
+          <div class="pro-only">
+            <label>Nom court pour l'icône d'installation (écran d'accueil du client)</label>
+            <input type="text" id="f_pwa_nom" placeholder="Ex : Élégance (12 caractères max conseillés)">
+            <div class="photo-note">
+              <p><strong>Inclus automatiquement en Business Pro :</strong> filtres, favoris et fiche client — rien à remplir de plus.</p>
+            </div>
+          </div>
+
+          <div class="photo-note">
+          <p><strong>À envoyer ensuite :</strong> logo, affiches, photos (2 par produit), vidéos éventuelles.</p>
+          </div>
+
+          <label>Notes complémentaires (facultatif)</label>
+          <textarea id="f_notes7" placeholder="Ex : titre souhaité sur la page d'accueil, message d'accueil, autres précisions sur le design"></textarea>
+        </div>
+
+        <!-- STEP 8 -->
+        <div class="wizard-step" data-step="8">
+          <div class="step-title"><div class="badge">8</div><h2>Validation</h2></div>
+          <ul class="info-list">
+            <li>Site internet professionnel + catalogue WhatsApp</li>
+            <li>Hébergement offert, adapté mobile/tablette/ordinateur</li>
+            <li>Pages Accueil, Contact, À propos, catégories et sous-catégories</li>
+            <li>Bouton Commander sur WhatsApp, réseaux sociaux affichés</li>
+            <li>2 photos max par produit</li>
+          </ul>
+
+          <label>Nom &amp; signature</label>
+          <input type="text" id="f_signature" placeholder="Tapez votre nom complet">
+
+          <div class="consent">
+            <input type="checkbox" id="f_consent">
+            <p>Je confirme que toutes les informations renseignées sont exactes et j'autorise Havenixci à les utiliser pour créer mon site et mon catalogue WhatsApp.</p>
+          </div>
+
+          <button class="send-btn" id="sendBtn" type="button"><i>↗</i> Envoyer sur WhatsApp</button>
+          <div class="warn" id="warnMsg"></div>
+          <div class="helper-note">Après l'envoi, ajoutez vos photos, logo et affiches directement dans la conversation.</div>
+        </div>
+
+        <div class="step-nav">
+          <button type="button" class="nav-btn back" id="backBtn">Précédent</button>
+          <button type="button" class="nav-btn next" id="nextBtn">Suivant</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="preview-sticky">
+      <div class="phone-frame">
+        <div class="phone-header">
+          <div class="avatar">H</div>
+          <div><div class="name">Havenixci</div><div class="status">Aperçu du message</div></div>
+        </div>
+        <div class="chat-area" id="chatArea"><div class="bubble" id="previewBubble" style="display:none;"></div></div>
+        <div class="typing-label" id="typingLabel">Havenixci écrit votre fiche en direct…</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const stepNames = ['Informations générales','Votre projet','Organisation','Vos produits','Vos services','Coordonnées','Personnalisation','Validation'];
+let currentStep = 1;
+const totalSteps = 8;
+
+function showStep(n){
+  document.querySelectorAll('.wizard-step').forEach(el => el.classList.toggle('active', Number(el.dataset.step) === n));
+  document.getElementById('progressText').textContent = `Étape ${n} sur ${totalSteps}`;
+  document.getElementById('progressStepName').textContent = stepNames[n-1];
+  document.getElementById('progressBar').style.width = (n/totalSteps*100) + '%';
+  const dotsEl = document.getElementById('progressDots');
+  if(!dotsEl.children.length){
+    for(let i=1;i<=totalSteps;i++){ const d = document.createElement('div'); d.className='progress-dot'; dotsEl.appendChild(d); }
+  }
+  Array.from(dotsEl.children).forEach((d,i) => {
+    d.classList.toggle('done', i+1 < n);
+    d.classList.toggle('current', i+1 === n);
+  });
+  document.getElementById('backBtn').style.visibility = n === 1 ? 'hidden' : 'visible';
+  document.getElementById('nextBtn').textContent = n === totalSteps ? 'Voir la validation' : 'Suivant';
+  document.getElementById('nextBtn').style.display = n === totalSteps ? 'none' : 'flex';
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+document.getElementById('nextBtn').addEventListener('click', () => { if(currentStep < totalSteps){ currentStep++; showStep(currentStep); saveState(); } });
+document.getElementById('backBtn').addEventListener('click', () => { if(currentStep > 1){ currentStep--; showStep(currentStep); saveState(); } });
+
+function setupSingleChipGroup(containerId, onChange){
+  const container = document.getElementById(containerId);
+  let value = '';
+  container.querySelectorAll('.chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      container.querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
+      chip.classList.add('selected');
+      value = chip.dataset.value;
+      if(onChange) onChange(value);
+      renderPreview();
+      saveState();
+    });
+  });
+  return {
+    get: () => value,
+    set: (val, silent) => {
+      const chip = container.querySelector(`.chip[data-value="${val}"]`);
+      if(!chip) return;
+      container.querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
+      chip.classList.add('selected');
+      value = val;
+      if(!silent && onChange) onChange(val);
+    }
+  };
+}
+
+const categoryExamples = {
+  'Vêtements': 'Catégorie : Homme — Sous-catégories : Chemises, Jeans, T-shirts, Chaussures',
+  'Chaussures': 'Catégorie : Homme / Femme — Sous-catégories : Baskets, Sandales, Bottes',
+  'Restaurant': 'Catégorie : Plats — Sous-catégories : Poulet, Poisson, Grillades, Attiéké',
+  'Pâtisserie': 'Catégorie : Gâteaux — Sous-catégories : Mariage, Anniversaire, Cupcakes, Desserts',
+  'Coiffure': 'Catégorie : Coiffure Femme — Sous-catégories : Tresses, Lissage, Brushing',
+  'Institut de beauté': 'Catégorie : Soins — Sous-catégories : Visage, Corps, Ongles',
+  'Cosmétiques': 'Catégorie : Produits corporels — Sous-catégories : Savons, Laits corps, Huiles, Crèmes visage',
+  'Pharmacie': 'Catégorie : Médicaments — Sous-catégories : Sur ordonnance, Sans ordonnance, Parapharmacie',
+  'Alimentation': 'Catégorie : Fruits et légumes — Sous-catégories : Fruits, Légumes, Épicerie',
+  'default': 'Catégorie : Nom général — Sous-catégories : deux ou trois types plus précis'
+};
+
+const activityChips = setupSingleChipGroup('activityChips', (val) => {
+  document.getElementById('activityOtherWrap').classList.toggle('visible', val === 'Autre');
+  const hint = document.getElementById('categoryExampleHint');
+  const text = categoryExamples[val] || categoryExamples.default;
+  hint.innerHTML = `<strong>Exemple pour votre activité (juste une idée, vous écrivez ce que vous voulez) :</strong>${text}`;
+  hint.classList.add('visible');
+});
+const nbProdChips = setupSingleChipGroup('nbProdChips', (val) => {
+  document.getElementById('nbProdCustomWrap').classList.toggle('visible', val === 'Autre');
+  if(val === 'Autre'){
+    const hint = document.getElementById('nbProdAutoHint');
+    hint.style.display = 'block';
+    hint.textContent = "Au-delà de 50 produits, précisez le nombre : un devis personnalisé vous sera proposé.";
+  }
+});
+document.querySelectorAll('.plan-more-toggle').forEach(t => {
+  t.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const extra = document.getElementById(t.dataset.target);
+    const open = extra.classList.toggle('open');
+    t.textContent = open ? 'Masquer le détail' : 'Voir le détail';
+  });
+});
+
+const planLabels = { 'Starter':'Starter — 20 000 FCFA', 'Business':'Business — 40 000 FCFA', 'BusinessPro':'Business Pro — 60 000 FCFA', 'SurMesure':'Sur mesure — sur devis' };
+const planRecapText = {
+  'Starter':"Catalogue simple jusqu'à 20 produits, bouton WhatsApp, lien partageable.",
+  'Business':"Catalogue complet jusqu'à 50 produits, panier avec total automatique, livraison et facture simples, réseaux sociaux affichés.",
+  'BusinessPro':"Tout Business, plus facture automatique avec frais de livraison, site installable, filtres avancés, favoris et animations.",
+  'SurMesure':"Plus de 50 produits ou besoins spécifiques : décrivez votre projet, un devis personnalisé vous sera proposé."
+};
+
+function setupPlanGroup(containerId, onChange){
+  const container = document.getElementById(containerId);
+  let value = '';
+  container.querySelectorAll('.plan-card').forEach(card => {
+    card.addEventListener('click', () => {
+      container.querySelectorAll('.plan-card').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+      value = card.dataset.value;
+      if(onChange) onChange(value);
+      renderPreview();
+      saveState();
+    });
+  });
+  return {
+    get: () => value,
+    set: (val, silent) => {
+      const card = container.querySelector(`.plan-card[data-value="${val}"]`);
+      if(!card) return;
+      container.querySelectorAll('.plan-card').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+      value = val;
+      if(!silent && onChange) onChange(val);
+    }
+  };
+}
+
+function applyFormuleVisibility(val){
+  document.body.classList.toggle('formule-starter', val === 'Starter');
+  document.body.classList.toggle('formule-business', val === 'Business');
+  document.body.classList.toggle('formule-pro', val === 'BusinessPro');
+  document.body.classList.toggle('formule-sur-mesure', val === 'SurMesure');
+  document.body.classList.toggle('formule-plus', val === 'Business' || val === 'BusinessPro' || val === 'SurMesure');
+  const recap = document.getElementById('planRecap');
+  if(val && planRecapText[val]){
+    recap.innerHTML = `<strong>${planLabels[val]}</strong>${planRecapText[val]}`;
+    recap.classList.add('visible');
+  } else {
+    recap.classList.remove('visible');
+  }
+}
+const formuleToRange = { 'Starter':'1-20', 'Business':'1-50', 'BusinessPro':'1-50', 'SurMesure':'Autre' };
+const nbProdSection = document.getElementById('nbProdSection');
+const formuleChips = setupPlanGroup('formuleChips', (val) => {
+  applyFormuleVisibility(val);
+  nbProdSection.classList.add('visible');
+  const range = formuleToRange[val];
+  if(range){
+    const chip = document.querySelector(`#nbProdChips .chip[data-value="${range}"]`);
+    if(chip) chip.click();
+  }
+  const hint = document.getElementById('nbProdAutoHint');
+  const label = document.getElementById('nbProdCustomLabel');
+  hint.style.display = 'block';
+  if(val === 'SurMesure'){
+    hint.textContent = "Indiquez votre nombre de produits : un devis personnalisé vous sera proposé.";
+    label.textContent = 'Nombre de produits ou services (approximatif)';
+  } else {
+    hint.textContent = `La formule ${val === 'BusinessPro' ? 'Business Pro' : val} inclut jusqu'à ${val === 'Starter' ? '20' : '50'} produits. Choisissez "Autre" si vous en avez plus.`;
+    label.textContent = 'Indiquez un nombre précis';
+  }
+});
+const livraisonChips = setupSingleChipGroup('livraisonChips', (val) => {
+  document.getElementById('livraisonZonesWrap').classList.toggle('visible', val === 'Oui');
+});
+const couleurChips = setupSingleChipGroup('couleurChips', (val) => {
+  document.getElementById('couleurOtherWrap').classList.toggle('visible', val === 'Autre');
+});
+const styleChips = setupSingleChipGroup('styleChips');
+const banniereChips = setupSingleChipGroup('banniereChips', (val) => {
+  document.getElementById('banniereTexteWrap').classList.toggle('visible', val === 'Oui');
+});
+
+document.getElementById('servicesToggle').addEventListener('change', (e) => {
+  document.getElementById('servicesSection').classList.toggle('visible', e.target.checked);
+  renderPreview();
+  saveState();
+});
+
+function makeRepeater(containerId, addBtnId, buildRowHtml, label){
+  const container = document.getElementById(containerId);
+  let count = 0;
+  function updateNumbers(){
+    container.querySelectorAll('.repeat-card').forEach((card, i) => { card.querySelector('.repeat-num').textContent = `${label} ${i+1}`; });
+  }
+  function addRow(){
+    count++;
+    const div = document.createElement('div');
+    div.className = 'repeat-card';
+    div.innerHTML = `<div class="repeat-num">${label} ${count}</div><button type="button" class="repeat-remove" data-remove="1">Supprimer</button>` + buildRowHtml();
+    container.appendChild(div);
+    updateNumbers();
+    return div;
+  }
+  function clearAll(){
+    container.querySelectorAll('.repeat-card').forEach(c => c.remove());
+    count = 0;
+  }
+  container.addEventListener('click', (e) => {
+    if(e.target.dataset.remove){
+      const card = e.target.closest('.repeat-card');
+      if(container.querySelectorAll('.repeat-card').length > 1){ card.remove(); updateNumbers(); }
+      renderPreview();
+      saveState();
+    }
+  });
+  container.addEventListener('input', () => { renderPreview(); saveState(); });
+  document.getElementById(addBtnId).addEventListener('click', () => { addRow(); renderPreview(); saveState(); });
+  addRow();
+  return { container, addRow, clearAll };
+}
+
+const categoriesContainer = makeRepeater('categoriesContainer', 'addCategoryBtn', () => `
+    <label>Nom de la catégorie</label>
+    <input type="text" class="c-name" placeholder="Ex : Homme, Plats, Produits corporels...">
+    <label>Sous-catégories (séparées par une virgule)</label>
+    <input type="text" class="c-subs" placeholder="Ex : Chemises, Jeans, T-shirts">
+`, 'Catégorie');
+
+const productsContainer = makeRepeater('productsContainer', 'addProductBtn', () => `
+    <label>Nom du produit</label>
+    <input type="text" class="p-name" placeholder="Ex : Savon Carotte 250g">
+    <div class="two-col">
+      <div><label>Prix</label><div class="fcfa-input"><input type="number" class="p-price" min="0" placeholder="Ex : 5 000"><span>FCFA</span></div></div>
+      <div><label>Catégorie</label><input type="text" class="p-category" placeholder="Reprenez une catégorie ci-dessus"></div>
+    </div>
+    <label>Description</label>
+    <textarea class="p-desc" placeholder="Ex : Hydratant, pour tous types de peau"></textarea>
+    <div class="checkbox-row"><input type="checkbox" class="p-featured"><label>Produit vedette (affiché sur la page d'accueil)</label></div>
+
+    <div class="photo-note">
+      <p><strong>📷 Photos :</strong> ajoutez-les dans la conversation WhatsApp juste après l'envoi.</p>
+    </div>
+
+    <button type="button" class="send-btn p-send-btn"><i>📲</i> Envoyer ce produit sur WhatsApp</button>
+    <div class="warn p-warn"></div>
+    <div class="p-sent-badge" style="display:none; align-items:center; justify-content:center; gap:8px; font-size:12.5px; color:var(--wa-green-dark); font-weight:600; text-align:center; margin-top:8px;">
+      <span>✓ Produit envoyé sur WhatsApp</span>
+      <button type="button" class="p-edit-btn" style="background:none; border:none; color:var(--blue-dark); font-size:12px; font-weight:500; cursor:pointer; text-decoration:underline;">Modifier</button>
+    </div>
+`, 'Produit');
+
+function lockProductCard(card){
+  card.querySelectorAll('input, textarea').forEach(el => { el.disabled = true; });
+  const btn = card.querySelector('.p-send-btn');
+  btn.style.display = 'none';
+  card.querySelector('.p-warn').textContent = '';
+  card.querySelector('.p-sent-badge').style.display = 'flex';
+  card.dataset.sent = '1';
+}
+function unlockProductCard(card){
+  card.querySelectorAll('input, textarea').forEach(el => { el.disabled = false; });
+  card.querySelector('.p-send-btn').style.display = 'flex';
+  card.querySelector('.p-sent-badge').style.display = 'none';
+  card.dataset.sent = '';
+}
+
+function buildSingleProductMessage(p, isBusiness){
+  const boutique = document.getElementById('f_boutique').value.trim();
+  const nomResp = document.getElementById('f_nom').value.trim();
+  const tel = document.getElementById('f_tel').value.trim();
+  let l = [];
+  l.push('NOUVEAU PRODUIT' + (boutique ? ' — ' + boutique : (nomResp ? ' — ' + nomResp : '')));
+  l.push('');
+  l.push(`Nom : ${p.name || '-'}`);
+  l.push(`Catégorie : ${p.category || '-'}`);
+  l.push(`Prix : ${p.price ? fmtFCFA(Number(p.price)) : '-'}`);
+  l.push(`Description : ${p.desc || '-'}`);
+  if(p.featured) l.push('Produit vedette : Oui');
+    if(tel) l.push(`Contact commande : ${tel}`);
+  l.push('');
+  l.push('(Photos de ce produit envoyées juste après ce message)');
+  return l.join('\n');
+}
+
+productsContainer.container.addEventListener('click', (e) => {
+  const sendBtn = e.target.closest('.p-send-btn');
+  const editBtn = e.target.closest('.p-edit-btn');
+  if(sendBtn){
+    const card = sendBtn.closest('.repeat-card');
+    const warn = card.querySelector('.p-warn');
+    const name = card.querySelector('.p-name').value.trim();
+    if(!name){ warn.textContent = "Merci de renseigner au moins le nom du produit avant d'envoyer."; return; }
+    const p = {
+      name,
+      price: card.querySelector('.p-price').value.trim(),
+      category: card.querySelector('.p-category').value.trim(),
+      desc: card.querySelector('.p-desc').value.trim(),
+      featured: card.querySelector('.p-featured').checked,
+    };
+    const isBusiness = ['Business','BusinessPro','SurMesure'].includes(formuleChips.get());
+    const message = buildSingleProductMessage(p, isBusiness);
+    const phone = '2250151030957';
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+    lockProductCard(card);
+    renderPreview();
+    saveState();
+  } else if(editBtn){
+    const card = editBtn.closest('.repeat-card');
+    unlockProductCard(card);
+    renderPreview();
+    saveState();
+  }
+});
+
+const servicesContainer = makeRepeater('servicesContainer', 'addServiceBtn', () => `
+    <label>Nom du service</label>
+    <input type="text" class="s-name" placeholder="Ex : Coiffure, Réparation téléphone">
+    <label>Prix à partir de</label>
+    <div class="fcfa-input"><input type="number" class="s-price" min="0" placeholder="Ex : 7 000"><span>FCFA</span></div>
+    <label>Description</label>
+    <textarea class="s-desc" placeholder="Description du service"></textarea>
+`, 'Service');
+
+['f_nom','f_boutique','f_tel','f_tel2','f_ville','f_quartier','f_maps','f_activity_other','f_nbprod_custom','f_date','f_horaires','f_zones','f_frais_livraison','f_facebook','f_instagram','f_tiktok','f_site','f_couleur_other','f_banniere_texte','f_pwa_nom','f_signature','f_notes1','f_notes2','f_notes3','f_notes4','f_notes5','f_notes6','f_notes7'].forEach(id => {
+  document.getElementById(id).addEventListener('input', () => { renderPreview(); saveState(); });
+});
+document.querySelectorAll('.pay-opt').forEach(cb => cb.addEventListener('change', () => { renderPreview(); saveState(); }));
+document.getElementById('f_consent').addEventListener('change', saveState);
+
+function fmtFCFA(n){ return Math.round(n).toLocaleString('fr-FR') + ' FCFA'; }
+function fmtDate(iso){ if(!iso) return ''; const [y,m,d] = iso.split('-'); return `${d}/${m}/${y}`; }
+function getCategories(){
+  return Array.from(categoriesContainer.container.querySelectorAll('.repeat-card')).map(c => ({name:c.querySelector('.c-name').value.trim(), subs:c.querySelector('.c-subs').value.trim()})).filter(c=>c.name||c.subs);
+}
+function getProducts(){
+  return Array.from(productsContainer.container.querySelectorAll('.repeat-card')).map(c => ({name:c.querySelector('.p-name').value.trim(), price:c.querySelector('.p-price').value.trim(), category:c.querySelector('.p-category').value.trim(), desc:c.querySelector('.p-desc').value.trim(), featured:c.querySelector('.p-featured').checked, sent:c.dataset.sent === '1'})).filter(p=>p.name||p.price||p.category||p.desc);
+}
+function getUnsentProducts(){ return getProducts().filter(p => !p.sent); }
+function getServices(){
+  if(!document.getElementById('servicesToggle').checked) return [];
+  return Array.from(servicesContainer.container.querySelectorAll('.repeat-card')).map(c => ({name:c.querySelector('.s-name').value.trim(), price:c.querySelector('.s-price').value.trim(), desc:c.querySelector('.s-desc').value.trim()})).filter(s=>s.name||s.price||s.desc);
+}
+function getPaiements(){
+  return Array.from(document.querySelectorAll('.pay-opt:checked')).map(cb => cb.value);
+}
+function getNbProduits(){
+  const custom = document.getElementById('f_nbprod_custom').value.trim();
+  if(custom) return custom;
+  return nbProdChips.get();
+}
+function getActivity(){
+  const val = activityChips.get();
+  if(val === 'Autre') return document.getElementById('f_activity_other').value.trim() || 'Autre';
+  return val;
+}
+function getCouleur(){
+  const val = couleurChips.get();
+  if(val === 'Autre') return document.getElementById('f_couleur_other').value.trim() || 'Autre';
+  return val;
+}
+
+function buildMessage(){
+  const nom = document.getElementById('f_nom').value.trim();
+  const boutique = document.getElementById('f_boutique').value.trim();
+  const tel = document.getElementById('f_tel').value.trim();
+  const tel2 = document.getElementById('f_tel2').value.trim();
+  const ville = document.getElementById('f_ville').value.trim();
+  const quartier = document.getElementById('f_quartier').value.trim();
+  const maps = document.getElementById('f_maps').value.trim();
+  const activite = getActivity();
+  const formule = formuleChips.get();
+  const nbprod = getNbProduits();
+  const date = fmtDate(document.getElementById('f_date').value);
+  const categories = getCategories();
+  const allProducts = getProducts();
+  const sentProducts = allProducts.filter(p => p.sent);
+  const products = allProducts.filter(p => !p.sent);
+  const services = getServices();
+  const facebook = document.getElementById('f_facebook').value.trim();
+  const instagram = document.getElementById('f_instagram').value.trim();
+  const tiktok = document.getElementById('f_tiktok').value.trim();
+  const site = document.getElementById('f_site').value.trim();
+  const horaires = document.getElementById('f_horaires').value.trim();
+  const livraison = livraisonChips.get();
+  const zones = document.getElementById('f_zones').value.trim();
+  const fraisLivraison = document.getElementById('f_frais_livraison').value.trim();
+  const paiements = getPaiements();
+  const couleur = getCouleur();
+  const style = styleChips.get();
+  const banniere = banniereChips.get();
+  const banniereTexte = document.getElementById('f_banniere_texte').value.trim();
+  const pwaNom = document.getElementById('f_pwa_nom').value.trim();
+  const signature = document.getElementById('f_signature').value.trim();
+  const notes1 = document.getElementById('f_notes1').value.trim();
+  const notes2 = document.getElementById('f_notes2').value.trim();
+  const notes3 = document.getElementById('f_notes3').value.trim();
+  const notes4 = document.getElementById('f_notes4').value.trim();
+  const notes5 = document.getElementById('f_notes5').value.trim();
+  const notes6 = document.getElementById('f_notes6').value.trim();
+  const notes7 = document.getElementById('f_notes7').value.trim();
+
+  let l = [];
+  l.push('FICHE DE CREATION SITE ET CATALOGUE — HAVENIXCI'); l.push('');
+  l.push('1. Informations générales');
+  l.push(`Nom & prénom : ${nom || '-'}`);
+  l.push(`Boutique : ${boutique || '-'}`);
+  l.push(`Type d'activité : ${activite || '-'}`);
+  l.push(`Téléphone/WhatsApp : ${tel || '-'}`);
+  if(tel2) l.push(`Autre contact : ${tel2}`);
+  const isBusiness = ['Business','BusinessPro','SurMesure'].includes(formule);
+  const isPro = ['BusinessPro','SurMesure'].includes(formule);
+  const formuleLabelFull = { 'Starter':'Starter (20 000 FCFA)', 'Business':'Business (40 000 FCFA)', 'BusinessPro':'Business Pro (60 000 FCFA)', 'SurMesure':'Sur mesure (devis à établir)' }[formule] || formule;
+  l.push(`Ville : ${ville || '-'}`);
+  if(quartier) l.push(`Quartier/adresse : ${quartier}`);
+  if(maps && isBusiness) l.push(`Google Maps : ${maps}`);
+  if(notes1) l.push(`Notes : ${notes1}`);
+  l.push('');
+  l.push('2. Projet');
+  l.push(`Formule : ${formule ? formuleLabelFull : '-'}`);
+  l.push(`Nombre de produits : ${nbprod || '-'}`);
+  l.push(`Date : ${date || '-'}`);
+  if(notes2) l.push(`Notes : ${notes2}`);
+  l.push('');
+  l.push('3. Catégories');
+  if(categories.length) categories.forEach((c,i) => l.push(`${i+1}. ${c.name || '-'}${c.subs ? ' (sous-catégories : ' + c.subs + ')' : ''}`));
+  else l.push('-');
+  if(notes3) l.push(`Notes : ${notes3}`);
+  l.push('');
+  l.push('4. Produits');
+  if(sentProducts.length){
+    l.push(`${sentProducts.length} produit(s) déjà envoyé(s) individuellement par WhatsApp avec leurs photos (voir messages précédents dans cette conversation).`);
+    l.push('');
+  }
+  if(products.length){
+    products.forEach((p,i) => {
+      l.push(`Produit ${i+1}${p.featured ? ' (vedette)' : ''}`);
+      l.push(`Nom : ${p.name || '-'}`);
+      l.push(`Catégorie : ${p.category || '-'}`);
+      l.push(`Prix : ${p.price ? fmtFCFA(Number(p.price)) : '-'}`);
+      l.push(`Description : ${p.desc || '-'}`);
+            l.push('');
+    });
+  } else if(!sentProducts.length){ l.push('-'); l.push(''); }
+  if(notes4) { l.push(`Notes : ${notes4}`); l.push(''); }
+  if(services.length){
+    l.push('5. Services');
+    services.forEach((s,i) => {
+      l.push(`Service ${i+1} : ${s.name || '-'} — dès ${s.price ? fmtFCFA(Number(s.price)) : '-'}`);
+      l.push(`Description : ${s.desc || '-'}`);
+      l.push('');
+    });
+    if(notes5) { l.push(`Notes : ${notes5}`); l.push(''); }
+  }
+  l.push('6. Coordonnées et présence en ligne');
+  if(facebook && isBusiness) l.push(`Facebook : ${facebook}`);
+  if(instagram && isBusiness) l.push(`Instagram : ${instagram}`);
+  if(tiktok && isBusiness) l.push(`TikTok : ${tiktok}`);
+  if(site) l.push(`Site existant : ${site}`);
+  l.push(`Horaires : ${horaires || '-'}`);
+  if(isBusiness) l.push(`Livraison : ${livraison || '-'}${livraison === 'Oui' && zones ? ' (zones : ' + zones + ')' : ''}${livraison === 'Oui' && isPro && fraisLivraison ? ' — frais : ' + fmtFCFA(Number(fraisLivraison)) : ''}`);
+  l.push(`Paiements acceptés : ${paiements.length ? paiements.join(', ') : '-'}`);
+  if(notes6) l.push(`Notes : ${notes6}`);
+  l.push('');
+  l.push('7. Personnalisation');
+  if(isPro && pwaNom) l.push(`Nom court pour l'icône d'installation : ${pwaNom}`);
+  l.push(`Couleur principale : ${couleur || '-'}`);
+  l.push(`Style : ${style || '-'}`);
+  l.push(`Bannière d'accueil : ${banniere || '-'}${banniere === 'Oui' && banniereTexte ? ' (texte : ' + banniereTexte + ')' : ''}`);
+  if(notes7) l.push(`Notes : ${notes7}`);
+  l.push('');
+  l.push('(Logo, affiches, bannières, photos et vidéos envoyés juste après ce message)');
+  l.push('');
+  l.push("Je confirme que les informations ci-dessus sont exactes et j'autorise Havenixci à les utiliser pour créer mon site et mon catalogue.");
+  l.push('');
+  l.push(`Signature : ${signature || '-'}`);
+  return l.join('\n');
+}
+
+function renderPreview(){
+  const nom = document.getElementById('f_nom').value.trim();
+  const boutique = document.getElementById('f_boutique').value.trim();
+  const activite = getActivity();
+  const formule = formuleChips.get();
+  const categories = getCategories();
+  const products = getProducts();
+  const services = getServices();
+  const anyFilled = nom || boutique || activite || formule || categories.length || products.length || services.length;
+  const chatArea = document.getElementById('chatArea');
+  const bubble = document.getElementById('previewBubble');
+  const typingLabel = document.getElementById('typingLabel');
+  if(!anyFilled){
+    bubble.style.display = 'none';
+    typingLabel.style.display = 'block';
+    if(!document.getElementById('typingBubble')){
+      const t = document.createElement('div');
+      t.className = 'typing-bubble';
+      t.id = 'typingBubble';
+      t.innerHTML = '<span></span><span></span><span></span>';
+      chatArea.insertBefore(t, chatArea.firstChild);
+    }
+    return;
+  }
+  const typing = document.getElementById('typingBubble');
+  if(typing) typing.remove();
+  typingLabel.style.display = 'none';
+  bubble.style.display = '';
+  let html = '<span class="line-title">FICHE SITE ET CATALOGUE</span>\n\n';
+  html += `Nom : ${nom || '<span class="muted">…</span>'}\n`;
+  if(boutique) html += `Boutique : ${boutique}\n`;
+  if(activite) html += `Activité : ${activite}\n`;
+  const formuleShort = { 'Starter':'Starter', 'Business':'Business', 'BusinessPro':'Business Pro', 'SurMesure':'Sur mesure' }[formule];
+  html += `Formule : ${formuleShort || '<span class="muted">…</span>'}\n`;
+  if(categories.length){ html += `\n<span class="line-title">Catégories (${categories.length})</span>\n`; categories.forEach((c,i)=>html+=`${i+1}. ${c.name || '…'}\n`); }
+  if(products.length){ html += `\n<span class="line-title">Catalogue (${products.length})</span>\n`; products.forEach((p,i)=>html+=`${i+1}. ${p.name || '…'}${p.price ? ' — ' + fmtFCFA(Number(p.price)) : ''}${p.featured ? ' ★' : ''}${p.sent ? ' <span class="muted">✓ envoyé</span>' : ''}\n`); }
+  if(services.length){ html += `\n<span class="line-title">Services (${services.length})</span>\n`; services.forEach((s,i)=>html+=`${i+1}. ${s.name || '…'}\n`); }
+  const now = new Date();
+  const hh = String(now.getHours()).padStart(2,'0');
+  const mm = String(now.getMinutes()).padStart(2,'0');
+  html += `<span class="bubble-meta">${hh}:${mm} <span class="ticks">✓✓</span></span>`;
+  bubble.innerHTML = html;
+}
+
+const DRAFT_KEY = 'havenixci_fiche_draft_v1';
+
+function collectState(){
+  const simpleIds = ['f_nom','f_boutique','f_tel','f_tel2','f_ville','f_quartier','f_maps','f_activity_other','f_nbprod_custom','f_date','f_horaires','f_zones','f_frais_livraison','f_facebook','f_instagram','f_tiktok','f_site','f_couleur_other','f_banniere_texte','f_pwa_nom','f_signature','f_notes1','f_notes2','f_notes3','f_notes4','f_notes5','f_notes6','f_notes7'];
+  const fields = {};
+  simpleIds.forEach(id => { fields[id] = document.getElementById(id).value; });
+  return {
+    step: currentStep,
+    fields,
+    activity: activityChips.get(),
+    formule: formuleChips.get(),
+    nbProd: nbProdChips.get(),
+    livraison: livraisonChips.get(),
+    couleur: couleurChips.get(),
+    style: styleChips.get(),
+    banniere: banniereChips.get(),
+    servicesEnabled: document.getElementById('servicesToggle').checked,
+    consent: document.getElementById('f_consent').checked,
+    paiements: getPaiements(),
+    categories: Array.from(categoriesContainer.container.querySelectorAll('.repeat-card')).map(c => ({name:c.querySelector('.c-name').value, subs:c.querySelector('.c-subs').value})),
+    products: Array.from(productsContainer.container.querySelectorAll('.repeat-card')).map(c => ({name:c.querySelector('.p-name').value, price:c.querySelector('.p-price').value, category:c.querySelector('.p-category').value, desc:c.querySelector('.p-desc').value, featured:c.querySelector('.p-featured').checked, sent:c.dataset.sent === '1'})),
+    services: Array.from(servicesContainer.container.querySelectorAll('.repeat-card')).map(c => ({name:c.querySelector('.s-name').value, price:c.querySelector('.s-price').value, desc:c.querySelector('.s-desc').value}))
+  };
+}
+
+let saveTimer = null;
+function flushSave(){
+  clearTimeout(saveTimer);
+  try{
+    localStorage.setItem(DRAFT_KEY, JSON.stringify(collectState()));
+  }catch(err){
+    // Stockage indisponible sur cet appareil ou dans cet aperçu : la fiche reste utilisable, seule la sauvegarde automatique est désactivée.
+  }
+}
+function saveState(){
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(flushSave, 250);
+}
+
+// Filet de sécurité : si la personne actualise la page, ferme l'onglet ou change
+// d'application sans avoir déclenché de nouvelle saisie (le timer de 250ms n'a pas
+// encore eu le temps de s'exécuter), on force quand même une sauvegarde immédiate
+// de l'état actuel de la fiche.
+window.addEventListener('beforeunload', flushSave);
+window.addEventListener('pagehide', flushSave);
+document.addEventListener('visibilitychange', () => {
+  if(document.visibilityState === 'hidden') flushSave();
+});
+
+function fillRepeaterRow(card, data, fieldsMap){
+  Object.keys(fieldsMap).forEach(key => {
+    const el = card.querySelector(fieldsMap[key]);
+    if(!el) return;
+    if(el.type === 'checkbox') el.checked = !!data[key];
+    else el.value = data[key] || '';
+  });
+}
+
+function restoreRepeater(repeater, items, fieldsMap){
+  if(!items || !items.length) return;
+  repeater.clearAll();
+  items.forEach(item => {
+    const card = repeater.addRow();
+    fillRepeaterRow(card, item, fieldsMap);
+  });
+}
+
+function loadState(){
+  let saved = null;
+  try{
+    const raw = localStorage.getItem(DRAFT_KEY);
+    if(raw) saved = JSON.parse(raw);
+  }catch(err){
+    saved = null;
+  }
+  if(!saved) return false;
+
+  Object.keys(saved.fields || {}).forEach(id => {
+    const el = document.getElementById(id);
+    if(el) el.value = saved.fields[id];
+  });
+
+  if(saved.formule) formuleChips.set(saved.formule, true);
+  applyFormuleVisibility(saved.formule || '');
+  if(saved.formule) document.getElementById('nbProdSection').classList.add('visible');
+  if(saved.nbProd) nbProdChips.set(saved.nbProd, true);
+  document.getElementById('nbProdCustomWrap').classList.toggle('visible', saved.nbProd === 'Autre');
+  if(saved.activity){
+    const knownChip = document.querySelector(`#activityChips .chip[data-value="${saved.activity}"]`);
+    activityChips.set(knownChip ? saved.activity : 'Autre', false);
+    document.getElementById('activityOtherWrap').classList.toggle('visible', !knownChip);
+  }
+  if(saved.livraison){
+    livraisonChips.set(saved.livraison, true);
+    document.getElementById('livraisonZonesWrap').classList.toggle('visible', saved.livraison === 'Oui');
+  }
+  if(saved.couleur){
+    const knownChip = document.querySelector(`#couleurChips .chip[data-value="${saved.couleur}"]`);
+    couleurChips.set(knownChip ? saved.couleur : 'Autre', true);
+    document.getElementById('couleurOtherWrap').classList.toggle('visible', !knownChip);
+  }
+  if(saved.style) styleChips.set(saved.style, true);
+  if(saved.banniere){
+    banniereChips.set(saved.banniere, true);
+    document.getElementById('banniereTexteWrap').classList.toggle('visible', saved.banniere === 'Oui');
+  }
+  if(saved.servicesEnabled){
+    document.getElementById('servicesToggle').checked = true;
+    document.getElementById('servicesSection').classList.add('visible');
+  }
+  document.getElementById('f_consent').checked = !!saved.consent;
+  (saved.paiements || []).forEach(val => {
+    const cb = document.querySelector(`.pay-opt[value="${val}"]`);
+    if(cb) cb.checked = true;
+  });
+
+  restoreRepeater(categoriesContainer, saved.categories, {name:'.c-name', subs:'.c-subs'});
+  restoreRepeater(productsContainer, saved.products, {name:'.p-name', price:'.p-price', category:'.p-category', desc:'.p-desc', featured:'.p-featured'});
+  if(saved.products && saved.products.length){
+    const productCards = productsContainer.container.querySelectorAll('.repeat-card');
+    saved.products.forEach((item, i) => {
+      if(item.sent && productCards[i]) lockProductCard(productCards[i]);
+    });
+  }
+  restoreRepeater(servicesContainer, saved.services, {name:'.s-name', price:'.s-price', desc:'.s-desc'});
+
+  currentStep = saved.step && saved.step >= 1 && saved.step <= totalSteps ? saved.step : 1;
+  return true;
+}
+
+function clearDraft(){
+  try{ localStorage.removeItem(DRAFT_KEY); }catch(err){}
+  location.reload();
+}
+document.getElementById('clearDraftBtn').addEventListener('click', clearDraft);
+
+function jumpToStepWithHighlight(step, targetId){
+  currentStep = step;
+  showStep(step);
+  saveState();
+  window.setTimeout(() => {
+    const el = document.getElementById(targetId);
+    if(!el) return;
+    el.scrollIntoView({behavior:'smooth', block:'center'});
+    el.classList.add('field-flag');
+    window.setTimeout(() => el.classList.remove('field-flag'), 1600);
+  }, 350);
+}
+
+document.getElementById('sendBtn').addEventListener('click', () => {
+  const warn = document.getElementById('warnMsg');
+  const consent = document.getElementById('f_consent').checked;
+  const nom = document.getElementById('f_nom').value.trim();
+  const tel = document.getElementById('f_tel').value.trim();
+  const signature = document.getElementById('f_signature').value.trim();
+  const formule = formuleChips.get();
+
+  if(!nom || !tel){ warn.textContent = "Merci de remplir au moins votre nom et votre numéro WhatsApp."; jumpToStepWithHighlight(1, !nom ? 'f_nom' : 'f_tel'); return; }
+  if(!formule){ warn.textContent = "Merci de choisir une formule avant d'envoyer votre fiche."; jumpToStepWithHighlight(2, 'formuleChips'); return; }
+  if(!signature){ warn.textContent = "Merci d'indiquer votre nom en signature pour confirmer votre fiche."; document.getElementById('f_signature').classList.add('field-flag'); window.setTimeout(() => document.getElementById('f_signature').classList.remove('field-flag'), 1600); return; }
+  if(!consent){ warn.textContent = "Merci de cocher la case de confirmation avant l'envoi."; return; }
+  warn.textContent = '';
+  const message = buildMessage();
+  const phone = '2250151030957';
+  const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  const btn = document.getElementById('sendBtn');
+  btn.innerHTML = '<i>✓✓</i> Ouverture de WhatsApp…';
+  btn.disabled = true;
+  window.setTimeout(() => { window.location.href = url; }, 450);
+});
+
+const hadDraft = loadState();
+if(!document.getElementById('f_date').value) document.getElementById('f_date').value = new Date().toISOString().slice(0,10);
+if(hadDraft) document.getElementById('draftBanner').style.display = 'flex';
+showStep(currentStep);
+renderPreview();
+
+</script>
+</body>
+</html>
